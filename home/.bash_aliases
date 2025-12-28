@@ -130,4 +130,9 @@ alias von='protonvpn connect --country NL'
 alias voff='protonvpn disconnect'
 alias vinfo='vpn-info'
 alias vswitch='vpn-switch'
-# test comment
+
+# Quick dotfiles management
+alias dotfiles='cd ~/dotfiles && git status'
+alias dotcommit='cd ~/dotfiles && git add -A && git commit -m'
+alias dotpush='cd ~/dotfiles && git push'
+alias dotquick='cd ~/dotfiles && git add -A && git commit -m "update configs" && git push'
