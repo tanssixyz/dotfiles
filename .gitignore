@@ -1,0 +1,57 @@
+# === Sensitive Files ===
+*.secret
+*.key
+*.password
+*_history
+*.log
+
+# Email configs (contain passwords/tokens)
+home/.mbsyncrc
+home/neomuttrc
+home/neomutt-*
+home/gmail-account
+home/migadu-account
+home/msmtp-config
+home/mailcap
+config/neomutt/
+config/msmtp/
+
+# Auth & Credentials
+home/.password-store/
+home/.gnupg/
+home/.ssh/
+home/.gitconfig.local
+
+# Browser data
+home/.librewolf/
+home/.mozilla/
+
+# === Cache & Session ===
+*.cache
+.DS_Store
+.Xauthority
+.lesshst
+
+# Nvim
+config/nvim/plugin/
+config/nvim/.netrwhist
+config/nvim/lazy-lock.json
+
+# === Large/Dynamic ===
+home/.npm/
+home/.npm-global/
+home/.bun/
+home/.local/
+home/.claude/
+home/.claude.json
+
+# === Build artifacts ===
+*.pyc
+__pycache__/
+node_modules/
+
+# Tmux plugins (managed by tpm)
+home/.tmux/plugins/
+
+# Tmux plugins (managed by tpm)
+home/.tmux/plugins/

@@ -1,0 +1,108 @@
+" Tridactyl Config - Minimal and Working
+sanitise tridactyllocal tridactylsync
+
+" Search engines
+set searchengine duckduckgo
+set searchurls.g https://www.google.com/search?q=%s
+set searchurls.gh https://github.com/search?q=%s
+set searchurls.npm https://www.npmjs.com/search?q=%s
+set searchurls.mdn https://developer.mozilla.org/en-US/search?q=%s
+set searchurls.arch https://wiki.archlinux.org/index.php?search=%s
+set searchurls.yt https://www.youtube.com/results?search_query=%s
+
+" Appearance
+colors dark
+set hintchars asdfghjkl
+set smoothscroll true
+
+" Editor
+set editorcmd kitty nvim
+
+" Basic navigation
+bind j scrollline 5
+bind k scrollline -5
+bind h scrollpx -50
+bind l scrollpx 50
+bind gg scrollto 0
+bind G scrollto 100
+bind d scrollpage 0.5
+bind u scrollpage -0.5
+
+" Tabs
+# bind J tabnext
+# bind K tabprev
+bind ] tabnext
+bind [ tabprev
+bind x tab
+bind X undo
+bind t tabnew
+bind gt tabnext
+bind gT tabprev
+bind T current_url tabnew
+
+" History
+bind H back
+bind L forward
+bind r reload
+
+" Hints
+bind f hint
+bind F hint -b
+
+" Search
+bind / fillcmdline find
+bind n findnext 1
+bind N findnext -1
+
+" Better search
+bind ? fillcmdline find -?
+bind ,<Space> nohlsearch
+
+" Open
+bind o fillcmdline open
+bind O fillcmdline tabopen
+
+" Yank
+bind yy clipboard yank
+bind yt composite get_current_url | clipboard yank
+
+bind p clipboard open
+bind P clipboard tabopen
+
+
+
+" Add after your existing binds
+bind <C-d> scrollpage 0.5
+bind <C-u> scrollpage -0.5
+bind <C-f> scrollpage 1
+bind <C-b> scrollpage -1
+
+quickmark g https://github.com
+quickmark m https://developer.mozilla.org
+quickmark n https://www.npmjs.com
+quickmark d https://duckduckgo.com
+quickmark r https://react.dev
+quickmark t https://tailwindcss.com
+
+bind b fillcmdline tab
+bind m fillcmdline bmark
+
+" Add zoom controls
+bind zi zoom 0.1 true
+bind zo zoom -0.1 true
+bind zz zoom 1
+bind = zoom 0.1 true
+bind - zoom -0.1 true
+
+" Add developer features
+bind gs viewsource
+bind gf editor
+
+" Add mode controls
+bind i mode ignore
+bind v mode visual
+bind --mode=ignore <Escape> mode normal
+bind --mode=insert <Escape> mode normal
+
+" Config reload
+bind ,r source

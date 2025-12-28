@@ -1,0 +1,10 @@
+[mgr]
+show_hidden = true
+sort_by = "mtime"       # Changed from "modified" to "mtime"
+sort_reverse = true
+linemode = "size"
+
+[preview]
+tab_size = 2
+max_width = 600
+max_height = 900

@@ -1,0 +1,147 @@
+bash# 
+
+Terminal
+super + Return
+    kitty
+
+# Program launcher
+super + d
+    dmenu_run
+
+# Close window
+super + shift + q
+    bspc node -c
+
+# Restart bspwm
+super + shift + r
+    bspc wm -r
+    
+# Kill window (force)
+super + q
+    bspc node -k
+
+# Quit bspwm
+super + shift + e
+    bspc quit
+
+# Reload sxhkd
+super + Escape
+    pkill -USR1 -x sxhkd
+#
+# Window focus (move between windows)
+#
+
+# Focus window in direction
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+# Or use arrow keys
+super + {Left,Down,Up,Right}
+    bspc node -f {west,south,north,east}
+
+#
+# Window moving
+#
+
+# Swap window with direction
+super + shift + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+
+#
+# Window sizing
+#
+
+# Make window fullscreen (toggle)
+super + f
+    bspc node -t ~fullscreen
+
+# Toggle floating window
+super + shift + space
+    bspc node -t ~floating
+
+#
+# Workspaces (desktops)
+#
+
+# Switch to workspace 1-9
+super + {1-9}
+    bspc desktop -f '^{1-9}'
+
+# Move window to workspace 1-9
+super + shift + {1-9}
+    bspc node -d '^{1-9}'
+
+#
+# Preselect (where next window opens)
+#
+
+# Preselect direction for next window
+super + ctrl + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+
+# Cancel preselection
+super + ctrl + space
+    bspc node -p cancel
+
+# Volume control
+#
+
+# Increase volume
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+# Decrease volume
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+# Mute toggle
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Alternative: Use super key if function keys don't work
+super + equal
+    pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+super + minus
+    pactl set-sink-volume @DEFAULT_SINK@ -5%
+
+super + m
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+super + alt + d 
+    xinput disable 11
+
+
+super + alt + e
+    xinput enable 11
+
+# Display modes
+#
+
+# Mirror mode
+super + p ; m
+    ~/scripts/projector-mirror.sh
+
+# Projector only
+super + p ; p
+    ~/scripts/projector-only.sh
+
+# Laptop only
+super + p ; l
+    ~/scripts/laptop-only.sh
+
+# VPN controls
+super + v ; c
+    kitty -e sh -c "protonvpn connect; read -p 'Press enter to close'"
+
+super + v ; d
+    protonvpn disconnect && notify-send "VPN Disconnected"
+
+super + v ; s
+    vpn-switch
+
+super + v ; i
+    kitty -e sh -c "vpn-info; read -p 'Press enter to close'"
+# Quick VPN status popup
+super + v ; n
+    vpn-notify

@@ -1,0 +1,194 @@
+" Tridactyl Config - Matching Qutebrowser Feel
+" ============================================================================
+
+" Basics
+sanitise tridactyllocal tridactylsync
+
+" Search engine
+set searchengine duckduckgo
+set searchurls.duckduckgo https://duckduckgo.com/?q=%s
+set searchurls.g https://www.google.com/search?q=%s
+set searchurls.gh https://github.com/search?q=%s
+set searchurls.npm https://www.npmjs.com/search?q=%s
+set searchurls.mdn https://developer.mozilla.org/en-US/search?q=%s
+set searchurls.arch https://wiki.archlinux.org/index.php?search=%s
+set searchurls.yt https://www.youtube.com/results?search_query=%s
+
+" Theme
+colors dark
+
+" Smooth scrolling
+set smoothscroll true
+
+" Hint characters (home row like qutebrowser)
+set hintchars hjklasdfgyuiopqwertnmzxcvb
+set hintfiltermode vimperator-reflow
+set hintuppercase false
+
+" New tab behavior
+set newtab https://duckduckgo.com
+
+" Download location
+set downloaddir ~/Downloads
+
+" Editor
+set editorcmd kitty -e nvim
+
+" ============================================================================
+" KEYBINDINGS (matching qutebrowser where possible)
+" ============================================================================
+
+" Navigation
+bind j scrollline 5
+bind k scrollline -5
+bind h scrollpx -50
+bind l scrollpx 50
+bind gg scrollto 0
+bind G scrollto 100
+bind d scrollpage 0.5
+bind u scrollpage -0.5
+bind <C-d> scrollpage 0.5
+bind <C-u> scrollpage -0.5
+bind <C-f> scrollpage 1
+bind <C-b> scrollpage -1
+
+" Tab navigation (like qutebrowser)
+bind J tabnext
+bind K tabprev
+bind gt tabnext
+bind gT tabprev
+bind x tabclose
+bind X undo
+bind t tabnew
+bind T current_url tabnew
+
+" History
+bind H back
+bind L forward
+bind r reload
+bind R reloadhard
+
+" Hints (link selection)
+bind f hint
+bind F hint -b
+bind ;y hint -y
+bind ;Y hint -cF img i => tri.excmds.yankimage(tri.urlutils.getAbsoluteURL(i.src))
+
+" Yank
+bind yy clipboard yank
+bind yt composite get_current_url | clipboard yank
+bind ym composite get_current_url | get_current_title | exclaim -s xclip -selection clipboard -i <<< "[" + JS_ARG[1] + "](" + JS_ARG[0] + ")"
+
+" Paste and go
+bind p clipboard open
+bind P clipboard tabopen
+
+" Search
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext -1
+bind ,<Space> nohlsearch
+
+" Open URL
+bind o fillcmdline open
+bind O fillcmdline tabopen
+bind go current_url open
+bind gO current_url tabopen
+
+" Quickmarks/bookmarks
+bind m fillcmdline bmark
+bind b fillcmdline tab
+bind B fillcmdline tabopen
+
+" Zoom
+bind zi zoom 0.1 true
+bind zo zoom -0.1 true
+bind zz zoom 1
+
+" View source
+bind gs viewsource
+bind gf editor
+
+" Inspector (dev tools)
+bind wi jsb browser.tabs.create({url: "about:devtools-toolbox?type=tab&id=" + tri.browserBg.activeTabId()})
+
+" Config
+bind ,r source
+bind ,e fillcmdline source
+
+" Mode switching
+bind i mode ignore
+bind --mode=ignore <Escape> mode normal
+bind --mode=ignore <C-[> mode normal
+bind --mode=insert <C-[> mode normal
+bind v mode visual
+
+" ============================================================================
+" IGNORE SITES (where you want normal browser behavior)
+" ============================================================================
+
+" Disable on sites that have their own vim-like shortcuts
+" autocmd DocStart ^https://docs\.google\.com mode ignore
+" autocmd DocStart ^https://github\.com/.*/.*/blob mode ignore
+
+" ============================================================================
+" QUICKMARKS (like qutebrowser quickmarks)
+" ============================================================================
+
+quickmark g https://github.com
+quickmark m https://developer.mozilla.org
+quickmark n https://www.npmjs.com
+quickmark d https://duckduckgo.com
+quickmark r https://react.dev
+quickmark t https://tailwindcss.com
+quickmark a https://wiki.archlinux.org
+
+" ============================================================================
+" PRIVACY SETTINGS
+" ============================================================================
+
+" Clear history on exit (optional)
+" autocmd TabEnter .* js tri.native.run("notify-send 'New tab'")
+
+" ============================================================================
+" MISC SETTINGS
+" ============================================================================
+
+" Don't show mode indicator (LibreWolf status bar shows it)
+set modeindicator false
+
+" Allow clipboard access
+set allowautofocus false
+
+" Number of results in command completions
+set findcase smart
+
+" Show new tab page
+guiset_quiet tabs count
+
+" ============================================================================
+" ALIASES
+" ============================================================================
+
+command q tabclose
+command qa qall
+command h help
+command w jsb browser.sessions.saveSession()
+
+" ============================================================================
+" ADDITIONAL COMMANDS
+" ============================================================================
+
+" Clear cookies for current site
+bind ,c composite get_current_url | jsb -p tri.excmds.exclaim_quiet("notify-send 'Cookies cleared'")
+
+" Toggle dark mode
+bind ,d js document.documentElement.style.filter = document.documentElement.style.filter === "invert(1)" ? "" : "invert(1)"
+
+" ============================================================================
+
+" Notification on config load
+js tri.native.run("notify-send 'Tridactyl config loaded'")
+```
+

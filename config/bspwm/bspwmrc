@@ -1,0 +1,36 @@
+#! /bin/sh
+# Notification daemon
+dunst &
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+# Window rules - ensure apps launch on correct desktops
+# bspc rule -a kitty desktop='^2'
+bspc rule -a librewolf desktop='^3'
+# Claude Code might use different class names, we'll verify
+bspc rule -a claude-desktop desktop='^1'
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+# Start battery monitor
+~/.local/bin/battery-monitor &
+# Launch startup applications
+~/.config/bspwm/autostart.sh &
+
+# Start wifi monitor
+~/.local/bin/wifi-monitor &
+
+# Start VPN monitor
+pgrep -f vpn-monitor || ~/.local/bin/vpn-monitor &
+
+sleep 5 && protonvpn connect
