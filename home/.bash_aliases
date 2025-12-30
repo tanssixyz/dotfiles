@@ -126,13 +126,86 @@ alias projector='~/scripts/projector-only.sh'
 alias laptop='~/scripts/laptop-only.sh'
 
 # vpn custom alias
-alias von='protonvpn connect --country NL'
-alias voff='protonvpn disconnect'
+alias vpn='vpn-connect'
+alias vpnoff='vpn-disconnect'
 alias vinfo='vpn-info'
 alias vswitch='vpn-switch'
-
+alias vpnspeed='vpn-speedtest'
 # Quick dotfiles management
 alias dotfiles='cd ~/dotfiles && git status'
 alias dotcommit='cd ~/dotfiles && git add -A && git commit -m'
 alias dotpush='cd ~/dotfiles && git push'
 alias dotquick='cd ~/dotfiles && git add -A && git commit -m "update configs" && git push'
+
+# Cheatsheet aliases
+alias githelp='cat ~/cheatsheets/git-quick.txt'
+alias gitref='nvim ~/cheatsheets/git-reference.md'
+
+# Cheatsheet aliases
+alias githelp='cat ~/cheatsheets/git-quick.txt'
+alias gitref='nvim ~/cheatsheets/git-reference.md'
+alias tmuxhelp='cat ~/cheatsheets/tmux-quick.txt'
+alias nvimhelp='cat ~/cheatsheets/nvim-advanced.txt'
+alias yazihelp='cat ~/cheatsheets/yazi-quick.txt'
+alias telehelp='cat ~/cheatsheets/telescope-quick.txt'
+alias cheat='ls ~/cheatsheets/ && echo "Use: githelp, tmuxhelp, nvimhelp, yazihelp, telehelp"'
+
+# Quick cheatsheet printer
+qhelp() {
+    case $1 in
+        git) cat ~/cheatsheets/git-quick.txt ;;
+        tmux) cat ~/cheatsheets/tmux-quick.txt ;;
+        nvim) cat ~/cheatsheets/nvim-advanced.txt ;;
+        yazi) cat ~/cheatsheets/yazi-quick.txt ;;
+        tele*) cat ~/cheatsheets/telescope-quick.txt ;;
+        *) echo "Available: git, tmux, nvim, yazi, telescope" ;;
+    esac
+}
+alias bashhelp='cat ~/cheatsheets/bash-quick.txt'
+
+# Updated qhelp with bash
+qhelp() {
+    case $1 in
+        git) cat ~/cheatsheets/git-quick.txt ;;
+        tmux) cat ~/cheatsheets/tmux-quick.txt ;;
+        nvim) cat ~/cheatsheets/nvim-advanced.txt ;;
+        yazi) cat ~/cheatsheets/yazi-quick.txt ;;
+        tele*) cat ~/cheatsheets/telescope-quick.txt ;;
+        bash) cat ~/cheatsheets/bash-quick.txt ;;
+        *) echo "Available: git, tmux, nvim, yazi, telescope, bash" ;;
+    esac
+}
+
+# Updated qhelp with bash
+qhelp() {
+    case $1 in
+        git) cat ~/cheatsheets/git-quick.txt ;;
+        tmux) cat ~/cheatsheets/tmux-quick.txt ;;
+        nvim) cat ~/cheatsheets/nvim-advanced.txt ;;
+        yazi) cat ~/cheatsheets/yazi-quick.txt ;;
+        tele*) cat ~/cheatsheets/telescope-quick.txt ;;
+        bash) cat ~/cheatsheets/bash-quick.txt ;;
+        *) echo "Available: git, tmux, nvim, yazi, telescope, bash" ;;
+    esac
+}
+
+# Search bash cheatsheet
+bashfind() {
+    grep -i "$1" ~/cheatsheets/bash-quick.txt
+}
+alias mdhelp='cat ~/cheatsheets/markdown-obsidian-quick.txt'
+alias mdref='nvim ~/cheatsheets/markdown-reference.md'
+
+# Updated qhelp with markdown
+qhelp() {
+    case $1 in
+        git) cat ~/cheatsheets/git-quick.txt ;;
+        tmux) cat ~/cheatsheets/tmux-quick.txt ;;
+        nvim) cat ~/cheatsheets/nvim-advanced.txt ;;
+        yazi) cat ~/cheatsheets/yazi-quick.txt ;;
+        tele*) cat ~/cheatsheets/telescope-quick.txt ;;
+        bash) cat ~/cheatsheets/bash-quick.txt ;;
+        md|markdown|obsidian) cat ~/cheatsheets/markdown-obsidian-quick.txt ;;
+        *) echo "Available: git, tmux, nvim, yazi, telescope, bash, markdown" ;;
+    esac
+}

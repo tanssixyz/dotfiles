@@ -31,6 +31,9 @@ bspc rule -a Screenkey manage=off
 ~/.local/bin/wifi-monitor &
 
 # Start VPN monitor
-pgrep -f vpn-monitor || ~/.local/bin/vpn-monitor &
+# pgrep -f vpn-monitor || ~/.local/bin/vpn-monitor &
+ pgrep -f vpn-notify || ~/.local/bin/vpn-notify &
 
-sleep 5 && protonvpn connect
+
+sleep 5 && vpn-connect nl &
+mullvad auto-connect set on &
