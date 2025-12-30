@@ -1,0 +1,70 @@
+╔══════════════════════════════════════════════════════════════╗
+║                    TMUX QUICK REFERENCE                      ║
+║                   Prefix: Ctrl-b (C-b)                       ║
+╠══════════════════════════════════════════════════════════════╣
+║ SESSIONS                                                     ║
+║ tmux                        Start new session                ║
+║ tmux new -s name            Named session                    ║
+║ tmux ls                     List sessions                    ║
+║ tmux attach -t name         Attach to session                ║
+║ tmux kill-session -t name   Kill session                     ║
+║                                                              ║
+║ C-b d                       Detach from session              ║
+║ C-b $                       Rename session                   ║
+║ C-b s                       List/switch sessions             ║
+╠══════════════════════════════════════════════════════════════╣
+║ WINDOWS (like tabs)                                          ║
+║ C-b c                       Create window                    ║
+║ C-b ,                       Rename window                    ║
+║ C-b &                       Kill window                      ║
+║ C-b w                       List windows                     ║
+║ C-b n                       Next window                      ║
+║ C-b p                       Previous window                  ║
+║ C-b 0-9                     Switch to window number          ║
+║ C-b f                       Find window by name              ║
+╠══════════════════════════════════════════════════════════════╣
+║ PANES (splits)                                               ║
+║ C-b %                       Vertical split                   ║
+║ C-b "                       Horizontal split                 ║
+║ C-b x                       Kill pane                        ║
+║ C-b o                       Next pane                        ║
+║ C-b ;                       Last pane                        ║
+║ C-b arrow                   Navigate panes                   ║
+║ C-b C-arrow                 Resize pane                      ║
+║ C-b z                       Zoom/unzoom pane                 ║
+║ C-b {                       Move pane left                   ║
+║ C-b }                       Move pane right                  ║
+║ C-b space                   Toggle layouts                   ║
+║ C-b !                       Break pane to window             ║
+╠══════════════════════════════════════════════════════════════╣
+║ COPY MODE (vi-mode)                                          ║
+║ C-b [                       Enter copy mode                  ║
+║ q                           Quit copy mode                   ║
+║ /                           Search forward                   ║
+║ ?                           Search backward                  ║
+║ n                           Next search result               ║
+║ Space                       Start selection                  ║
+║ Enter                       Copy selection                   ║
+║ C-b ]                       Paste buffer                     ║
+╠══════════════════════════════════════════════════════════════╣
+║ MISC                                                         ║
+║ C-b ?                       List all keybindings             ║
+║ C-b :                       Command prompt                   ║
+║ C-b t                       Show time                        ║
+║ C-b r                       Reload config                    ║
+║                             (:source ~/.tmux.conf)           ║
+╠══════════════════════════════════════════════════════════════╣
+║ USEFUL COMMANDS (:command-prompt)                            ║
+║ :new -s name                Create named session             ║
+║ :kill-session -t name       Kill session                     ║
+║ :setw synchronize-panes     Toggle sync input to all panes  ║
+║ :swap-window -t 2           Swap with window 2               ║
+║ :move-window -t 2           Move to position 2               ║
+╠══════════════════════════════════════════════════════════════╣
+║ WORKFLOW TIPS                                                ║
+║ • One session per project                                    ║
+║ • Window = different tasks (code, test, logs)                ║
+║ • Panes = related views (code + terminal)                    ║
+║ • Use C-b z to focus on one pane, z again to restore         ║
+║ • Name sessions/windows for easy switching                   ║
+╚══════════════════════════════════════════════════════════════╝

@@ -1,0 +1,80 @@
+╔══════════════════════════════════════════════════════════════╗
+║                    YAZI QUICK REFERENCE                      ║
+║                   (Terminal File Manager)                    ║
+╠══════════════════════════════════════════════════════════════╣
+║ NAVIGATION                                                   ║
+║ j/k         Down/Up                   h/l      Parent/Enter  ║
+║ g           Go to top                 G        Go to bottom  ║
+║ Arrow keys  Navigate                                         ║
+║ ~           Go to home                /        Go to root    ║
+║ -           Go to previous directory                         ║
+║ z           Jump to directory (with zoxide)                  ║
+╠══════════════════════════════════════════════════════════════╣
+║ SELECTION                                                    ║
+║ Space       Toggle selection          v        Visual mode   ║
+║ V           Visual mode (unset)       C-a      Select all    ║
+║ C-r         Reverse selection         Esc      Cancel select ║
+╠══════════════════════════════════════════════════════════════╣
+║ FILE OPERATIONS                                              ║
+║ y           Yank (copy)               x        Cut           ║
+║ p           Paste                     P        Paste (link)  ║
+║ d           Delete                    D        Delete force  ║
+║ r           Rename                    R        Bulk rename   ║
+║ c           Create (new file/dir)     o        Open          ║
+║ O           Open with...              Enter    Open/Enter    ║
+╠══════════════════════════════════════════════════════════════╣
+║ VIEW & PREVIEW                                               ║
+║ i           Preview mode              I        Preview off   ║
+║ Tab         Switch preview pane       Shift-Tab Prev. pane   ║
+║ [1-5]       Set preview size                                 ║
+║ C-s         Search in preview                                ║
+║ C-w         Close preview                                    ║
+╠══════════════════════════════════════════════════════════════╣
+║ SEARCH & FILTER                                              ║
+║ /           Search files              ?        Search rev.   ║
+║ n           Next result               N        Previous      ║
+║ f           Filter (show matching)    F        Smart filter  ║
+║ Esc         Clear filter/search                              ║
+╠══════════════════════════════════════════════════════════════╣
+║ SORTING                                                      ║
+║ ,m          Sort by modified          ,M       Reverse       ║
+║ ,n          Sort by name              ,N       Reverse       ║
+║ ,s          Sort by size              ,S       Reverse       ║
+║ ,e          Sort by extension         ,E       Reverse       ║
+╠══════════════════════════════════════════════════════════════╣
+║ TABS                                                         ║
+║ t           New tab                   w        Close tab     ║
+║ [1-9]       Switch to tab n           Tab      Next tab      ║
+║ Shift-Tab   Previous tab              {        Swap prev     ║
+║ }           Swap next                                        ║
+╠══════════════════════════════════════════════════════════════╣
+║ SHELL & EXTERNAL                                             ║
+║ :           Command mode               !        Shell        ║
+║ ;           Shell (block)              Enter    Open file    ║
+║ `           CD to current dir (on quit)                      ║
+║ e           Edit in $EDITOR (nvim)                           ║
+╠══════════════════════════════════════════════════════════════╣
+║ USEFUL COMMANDS (:command)                                   ║
+║ :cd path    Change directory          :help    Show help    ║
+║ :q          Quit                      :quit!   Force quit    ║
+║ :hidden     Toggle hidden files                              ║
+║ :linemode   Change line display mode                         ║
+╠══════════════════════════════════════════════════════════════╣
+║ BOOKMARKS                                                    ║
+║ m{key}      Set bookmark              '{key}   Go to mark    ║
+║ :bm         Show bookmarks            :bm del  Delete marks  ║
+╠══════════════════════════════════════════════════════════════╣
+║ MISC                                                         ║
+║ .           Toggle hidden files       s        Sort menu     ║
+║ ?           Help                      q        Quit          ║
+║ C-c         Cancel operation          C-z      Suspend       ║
+║ a           Create archive            u        Unar          ║
+║ ^           Parent in same tab        $        End of list   ║
+╠══════════════════════════════════════════════════════════════╣
+║ WORKFLOW TIPS                                                ║
+║ • Use visual mode (v) to select multiple files               ║
+║ • Use f to filter then Space to select filtered              ║
+║ • Use tabs for working in multiple directories               ║
+║ • Set bookmarks (m) for frequent locations                   ║
+║ • Use ` to cd into yazi dir when you quit                    ║
+╚══════════════════════════════════════════════════════════════╝

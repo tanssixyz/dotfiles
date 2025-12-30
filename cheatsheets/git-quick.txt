@@ -1,0 +1,33 @@
+╔══════════════════════════════════════════════════════════════╗
+║                    GIT QUICK REFERENCE                       ║
+╠══════════════════════════════════════════════════════════════╣
+║ DAILY WORKFLOW                                               ║
+║ git status                   Check what changed              ║
+║ git add filename            Stage file                       ║
+║ git add .                   Stage all                        ║
+║ git commit -m "msg"         Commit with message              ║
+║ git push                    Push to remote                   ║
+║ git pull                    Pull from remote                 ║
+╠══════════════════════════════════════════════════════════════╣
+║ BRANCHES                                                     ║
+║ git switch -c name          Create & switch to branch        ║
+║ git switch main             Switch to main                   ║
+║ git branch                  List branches                    ║
+║ git merge branch            Merge branch into current        ║
+╠══════════════════════════════════════════════════════════════╣
+║ UNDO STUFF                                                   ║
+║ git restore file            Discard changes                  ║
+║ git restore --staged file   Unstage file                     ║
+║ git commit --amend          Fix last commit                  ║
+║ git reset --soft HEAD~1     Undo commit, keep changes        ║
+╠══════════════════════════════════════════════════════════════╣
+║ VIEW HISTORY                                                 ║
+║ git log --oneline           Compact log                      ║
+║ git log --graph --all       Visual tree                      ║
+║ git diff                    View changes                     ║
+╠══════════════════════════════════════════════════════════════╣
+║ DOTFILES (MY ALIASES)                                        ║
+║ dotfiles                    See dotfiles changes             ║
+║ dotcommit "msg"             Commit dotfiles                  ║
+║ dotpush                     Push dotfiles                    ║
+╚══════════════════════════════════════════════════════════════╝

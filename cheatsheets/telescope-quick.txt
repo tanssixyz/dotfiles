@@ -1,0 +1,107 @@
+╔══════════════════════════════════════════════════════════════╗
+║              TELESCOPE QUICK REFERENCE (NVIM)                ║
+║                   (Fuzzy Finder Plugin)                      ║
+╠══════════════════════════════════════════════════════════════╣
+║ COMMON PICKERS (add to your nvim config)                     ║
+║ <leader>ff  Find files                <leader>fg Find grep   ║
+║ <leader>fb  Find buffers              <leader>fh Find help   ║
+║ <leader>fo  Find old files            <leader>fc Find commit║
+║ <leader>fr  Find recent               <leader>fs Find string║
+║ <leader>fw  Find word under cursor                           ║
+║ <leader>fd  Find diagnostics          <leader>fk Find keys   ║
+║ <leader>fm  Find marks                <leader>ft Find tags   ║
+╠══════════════════════════════════════════════════════════════╣
+║ NAVIGATION IN PICKER                                         ║
+║ C-n / j     Next item                 C-p / k   Previous     ║
+║ C-u         Scroll preview up         C-d       Scroll down  ║
+║ C-f         Scroll preview right      C-k       Scroll left  ║
+║ gg          First item                G         Last item    ║
+║ M           Middle of list                                   ║
+║ H           High in viewport          L         Low in view  ║
+╠══════════════════════════════════════════════════════════════╣
+║ ACTIONS IN PICKER                                            ║
+║ Enter       Select & open             C-x       Open hsplit  ║
+║ C-v         Open vsplit               C-t       Open in tab  ║
+║ C-q         Send to quickfix          M-q       Send all     ║
+║ Esc / C-c   Close picker                                     ║
+║ Tab         Toggle selection          S-Tab     Toggle all   ║
+║ C-/         Show mappings help        ?         Same         ║
+╠══════════════════════════════════════════════════════════════╣
+║ SEARCH MODES                                                 ║
+║ C-r         Cycle modes (fuzzy/regex) C-s       Cycle sort   ║
+║ C-l         Complete                  C-w       Delete word  ║
+║ C-a         Go to start               C-e       Go to end    ║
+║ C-k         Clear prompt                                     ║
+╠══════════════════════════════════════════════════════════════╣
+║ FILE PICKERS                                                 ║
+║ :Telescope find_files                 Find files in cwd      ║
+║ :Telescope git_files                  Git tracked files      ║
+║ :Telescope oldfiles                   Recent files           ║
+║ :Telescope file_browser               File browser           ║
+║                                                              ║
+║ In file_browser:                                             ║
+║ c           Create file/dir           r         Rename       ║
+║ d           Delete                    y         Copy         ║
+║ m           Move                      g         Goto parent  ║
+╠══════════════════════════════════════════════════════════════╣
+║ TEXT SEARCH                                                  ║
+║ :Telescope live_grep                  Live grep in files     ║
+║ :Telescope grep_string                Grep current word      ║
+║ :Telescope current_buffer_fuzzy_find  Search in buffer       ║
+╠══════════════════════════════════════════════════════════════╣
+║ VIM HELPERS                                                  ║
+║ :Telescope buffers                    Open buffers           ║
+║ :Telescope help_tags                  Help documentation     ║
+║ :Telescope commands                   Available commands     ║
+║ :Telescope command_history            Command history        ║
+║ :Telescope search_history             Search history         ║
+║ :Telescope keymaps                    All keymaps            ║
+║ :Telescope vim_options                Vim options            ║
+║ :Telescope marks                      Marks                  ║
+║ :Telescope registers                  Registers              ║
+║ :Telescope colorscheme                Preview colorschemes   ║
+╠══════════════════════════════════════════════════════════════╣
+║ LSP PICKERS                                                  ║
+║ :Telescope lsp_references             Find references        ║
+║ :Telescope lsp_definitions            Go to definition       ║
+║ :Telescope lsp_implementations        Implementations        ║
+║ :Telescope lsp_type_definitions       Type definitions       ║
+║ :Telescope diagnostics                Diagnostics            ║
+║ :Telescope lsp_document_symbols       Document symbols       ║
+║ :Telescope lsp_workspace_symbols      Workspace symbols      ║
+╠══════════════════════════════════════════════════════════════╣
+║ GIT PICKERS                                                  ║
+║ :Telescope git_files                  Git tracked files      ║
+║ :Telescope git_commits                Git commits            ║
+║ :Telescope git_bcommits               Buffer commits         ║
+║ :Telescope git_branches               Git branches           ║
+║ :Telescope git_status                 Git status             ║
+║ :Telescope git_stash                  Git stash              ║
+╠══════════════════════════════════════════════════════════════╣
+║ ADVANCED                                                     ║
+║ :Telescope builtin                    All pickers            ║
+║ :Telescope resume                     Resume last picker     ║
+║ :Telescope pickers                    Previous pickers       ║
+║ :Telescope planets                    Use telescope!         ║
+╠══════════════════════════════════════════════════════════════╣
+║ RECOMMENDED KEYMAPS (add to init.lua)                        ║
+║                                                              ║
+║ local builtin = require('telescope.builtin')                 ║
+║ vim.keymap.set('n', '<leader>ff', builtin.find_files)        ║
+║ vim.keymap.set('n', '<leader>fg', builtin.live_grep)         ║
+║ vim.keymap.set('n', '<leader>fb', builtin.buffers)           ║
+║ vim.keymap.set('n', '<leader>fh', builtin.help_tags)         ║
+║ vim.keymap.set('n', '<leader>fo', builtin.oldfiles)          ║
+║ vim.keymap.set('n', '<leader>fw', builtin.grep_string)       ║
+║ vim.keymap.set('n', '<leader>fc', builtin.git_commits)       ║
+║ vim.keymap.set('n', '<leader>fs', builtin.git_status)        ║
+║ vim.keymap.set('n', '<leader>fr', builtin.resume)            ║
+║ vim.keymap.set('n', '<leader>fd', builtin.diagnostics)       ║
+╠══════════════════════════════════════════════════════════════╣
+║ WORKFLOW TIPS                                                ║
+║ • Use C-q to send matches to quickfix for batch operations   ║
+║ • Tab to multi-select files, then C-q to quickfix            ║
+║ • Use resume to go back to last search                       ║
+║ • live_grep supports regex patterns                          ║
+║ • Use C-/ to see all available actions in any picker         ║
+╚══════════════════════════════════════════════════════════════╝

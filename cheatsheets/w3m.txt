@@ -1,0 +1,32 @@
+W3M CHEATSHEET
+
+NAVIGATION
+k/↑         Move up
+j/↓         Move down  
+h/←         Scroll left
+l/→         Scroll right
+Space       Page down
+b           Page up
+<           Shift page left
+>           Shift page right
+
+LINKS & BROWSING
+Tab         Next link
+Shift+Tab   Previous link
+Enter       Follow link
+B           Back
+v           View history (then use j/k to select, Enter to go)
+U           Open new URL
+ESC         Exit text field/cancel
+
+SEARCHING
+/           Search forward on page
+?           Search backward on page
+n           Next search result
+
+USEFUL
+H           Help (all keybindings)
+o           Options
+R           Reload page
+q           Quit
+Ctrl+C      Cancel/exit input

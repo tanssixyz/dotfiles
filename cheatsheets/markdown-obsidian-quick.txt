@@ -1,0 +1,296 @@
+╔══════════════════════════════════════════════════════════════╗
+║           MARKDOWN & OBSIDIAN QUICK REFERENCE                ║
+╠══════════════════════════════════════════════════════════════╣
+║ HEADINGS                                                     ║
+║ # Heading 1                  Largest heading                 ║
+║ ## Heading 2                 Second level                    ║
+║ ### Heading 3                Third level                     ║
+║ #### Heading 4               Fourth level                    ║
+║ ##### Heading 5              Fifth level                     ║
+║ ###### Heading 6             Smallest heading                ║
+╠══════════════════════════════════════════════════════════════╣
+║ TEXT FORMATTING                                              ║
+║ *italic* or _italic_         Italic text                     ║
+║ **bold** or __bold__         Bold text                       ║
+║ ***bold italic***            Bold and italic                 ║
+║ ~~strikethrough~~            Strikethrough                   ║
+║ ==highlight==                Highlighted text (Obsidian)     ║
+║ `inline code`                Inline code                     ║
+║ > Quote                      Blockquote                      ║
+║ >> Nested quote              Nested blockquote               ║
+║ ---                          Horizontal rule                 ║
+╠══════════════════════════════════════════════════════════════╣
+║ LISTS                                                        ║
+║ - Item                       Unordered list (bullet)         ║
+║ * Item                       Alternative bullet              ║
+║ + Item                       Alternative bullet              ║
+║   - Nested                   Indent 2 spaces for nested      ║
+║                                                              ║
+║ 1. First                     Ordered list                    ║
+║ 2. Second                    Numbered list                   ║
+║    1. Nested                 Nested numbered                 ║
+║                                                              ║
+║ - [ ] Unchecked              Task list (checkbox)            ║
+║ - [x] Checked                Completed task                  ║
+║ - [>] Forwarded              Forwarded task (Obsidian)       ║
+║ - [<] Scheduled              Scheduled task (Obsidian)       ║
+║ - [-] Cancelled              Cancelled task (Obsidian)       ║
+╠══════════════════════════════════════════════════════════════╣
+║ LINKS                                                        ║
+║ [Link text](https://url)     External link                   ║
+║ [Link text](url "Title")     Link with title                 ║
+║ <https://url>                Auto link                       ║
+║ [Link](#heading)             Link to heading                 ║
+║                                                              ║
+║ OBSIDIAN INTERNAL LINKS:                                     ║
+║ [[Note name]]                Link to note                    ║
+║ [[Note|Alias]]               Link with alias                 ║
+║ [[Note#Heading]]             Link to heading in note         ║
+║ [[Note#^block]]              Link to block                   ║
+║ ![[Note]]                    Embed note                      ║
+║ ![[Image.png]]               Embed image                     ║
+║ ![[Note#Heading]]            Embed section                   ║
+╠══════════════════════════════════════════════════════════════╣
+║ IMAGES                                                       ║
+║ ![Alt text](image.png)       Image                           ║
+║ ![Alt](image.png "Title")    Image with title                ║
+║ ![[image.png]]               Embed image (Obsidian)          ║
+║ ![[image.png|100]]           Resize width to 100px           ║
+║ ![[image.png|100x200]]       Resize to 100x200px             ║
+╠══════════════════════════════════════════════════════════════╣
+║ CODE BLOCKS                                                  ║
+║ `inline code`                Inline code                     ║
+║                                                              ║
+║ ```                          Code block (fenced)             ║
+║ code here                                                    ║
+║ ```                                                          ║
+║                                                              ║
+║ ```language                  Syntax highlighting             ║
+║ code here                                                    ║
+║ ```                                                          ║
+║                                                              ║
+║ Examples:                                                    ║
+║ ```python                    Python code                     ║
+║ ```javascript                JavaScript code                 ║
+║ ```bash                      Bash commands                   ║
+║ ```c                         C code                          ║
+╠══════════════════════════════════════════════════════════════╣
+║ TABLES                                                       ║
+║ | Header 1 | Header 2 |                                      ║
+║ |----------|----------|                                      ║
+║ | Cell 1   | Cell 2   |                                      ║
+║ | Cell 3   | Cell 4   |                                      ║
+║                                                              ║
+║ Alignment:                                                   ║
+║ | Left | Center | Right |                                    ║
+║ |:-----|:------:|------:|                                    ║
+║ | L    |   C    |     R |                                    ║
+╠══════════════════════════════════════════════════════════════╣
+║ OBSIDIAN FEATURES                                            ║
+║ TAGS:                                                        ║
+║ #tag                         Simple tag                      ║
+║ #nested/tag                  Nested tag                      ║
+║                                                              ║
+║ CALLOUTS:                                                    ║
+║ > [!note]                    Note callout                    ║
+║ > Content here                                               ║
+║                                                              ║
+║ > [!info]                    Info callout                    ║
+║ > [!tip]                     Tip/hint callout                ║
+║ > [!warning]                 Warning callout                 ║
+║ > [!danger]                  Danger/error callout            ║
+║ > [!question]                Question callout                ║
+║ > [!success]                 Success callout                 ║
+║ > [!example]                 Example callout                 ║
+║ > [!quote]                   Quote callout                   ║
+║                                                              ║
+║ Callout modifiers:                                           ║
+║ > [!note]+                   Expanded by default             ║
+║ > [!note]-                   Collapsed by default            ║
+║                                                              ║
+║ FOOTNOTES:                                                   ║
+║ Text with footnote[^1]                                       ║
+║ [^1]: Footnote content                                       ║
+║                                                              ║
+║ COMMENTS:                                                    ║
+║ %% This is a comment %%      Hidden comment                  ║
+║                                                              ║
+║ BLOCK REFERENCES:                                            ║
+║ Some text ^block-id          Create block reference          ║
+║ ![[Note#^block-id]]          Embed block                     ║
+╠══════════════════════════════════════════════════════════════╣
+║ FRONTMATTER (YAML)                                           ║
+║ ---                                                          ║
+║ title: Note Title                                            ║
+║ tags: [tag1, tag2]                                           ║
+║ date: 2024-01-01                                             ║
+║ author: Name                                                 ║
+║ ---                                                          ║
+║                                                              ║
+║ Common fields:                                               ║
+║ title, tags, date, author, status, category, aliases         ║
+╠══════════════════════════════════════════════════════════════╣
+║ OBSIDIAN SHORTCUTS (Default)                                ║
+║ Ctrl/Cmd + N        New note                                 ║
+║ Ctrl/Cmd + O        Quick switcher (open note)               ║
+║ Ctrl/Cmd + P        Command palette                          ║
+║ Ctrl/Cmd + ,        Settings                                 ║
+║ Ctrl/Cmd + E        Toggle edit/preview                      ║
+║ Ctrl/Cmd + F        Search in file                           ║
+║ Ctrl/Cmd + Shift+F  Search in all files                      ║
+║ Ctrl/Cmd + G        Open graph view                          ║
+║ Ctrl/Cmd + Alt+←/→  Navigate back/forward                    ║
+║ Ctrl/Cmd + K        Insert link                              ║
+║ Ctrl/Cmd + ]        Indent                                   ║
+║ Ctrl/Cmd + [        Unindent                                 ║
+║ Ctrl/Cmd + B        Bold                                     ║
+║ Ctrl/Cmd + I        Italic                                   ║
+║ Ctrl/Cmd + Enter    Toggle checkbox                          ║
+║ Ctrl/Cmd + D        Delete paragraph                         ║
+╠══════════════════════════════════════════════════════════════╣
+║ OBSIDIAN PLUGINS (Popular)                                   ║
+║ Dataview            Query and display data from notes        ║
+║ Templater           Advanced templates                       ║
+║ Calendar            Calendar view                            ║
+║ Kanban              Kanban boards                            ║
+║ Tasks               Advanced task management                 ║
+║ Excalidraw          Drawing integration                      ║
+║ Advanced Tables     Better table editing                     ║
+║ Periodic Notes      Daily/weekly/monthly notes               ║
+╠══════════════════════════════════════════════════════════════╣
+║ DATAVIEW QUERIES (Plugin)                                    ║
+║ ```dataview                                                  ║
+║ LIST                         List all notes                  ║
+║ FROM #tag                    From specific tag               ║
+║ WHERE condition              With conditions                 ║
+║ SORT field ASC/DESC          Sorted                          ║
+║ ```                                                          ║
+║                                                              ║
+║ Example:                                                     ║
+║ ```dataview                                                  ║
+║ TABLE file.mtime as Modified                                 ║
+║ FROM #project                                                ║
+║ WHERE status = "active"                                      ║
+║ SORT file.mtime DESC                                         ║
+║ ```                                                          ║
+╠══════════════════════════════════════════════════════════════╣
+║ MERMAID DIAGRAMS                                             ║
+║ ```mermaid                                                   ║
+║ graph TD                     Top-down flowchart              ║
+║   A[Start] --> B[Process]                                    ║
+║   B --> C{Decision}                                          ║
+║   C -->|Yes| D[End]                                          ║
+║   C -->|No| B                                                ║
+║ ```                                                          ║
+║                                                              ║
+║ ```mermaid                                                   ║
+║ sequenceDiagram              Sequence diagram                ║
+║   Alice->>Bob: Hello                                         ║
+║   Bob->>Alice: Hi                                            ║
+║ ```                                                          ║
+║                                                              ║
+║ ```mermaid                                                   ║
+║ gantt                        Gantt chart                     ║
+║   title Project Timeline                                     ║
+║   section Phase 1                                            ║
+║   Task 1: 2024-01-01, 7d                                     ║
+║ ```                                                          ║
+╠══════════════════════════════════════════════════════════════╣
+║ MATH (LaTeX)                                                 ║
+║ $inline math$                Inline equation                 ║
+║                                                              ║
+║ $$                           Display equation                ║
+║ x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}                         ║
+║ $$                                                           ║
+║                                                              ║
+║ Common symbols:                                              ║
+║ \alpha \beta \gamma          Greek letters                   ║
+║ \sum \int \prod              Operators                       ║
+║ \frac{a}{b}                  Fraction                        ║
+║ x^2  x_1                     Superscript/subscript           ║
+║ \sqrt{x}                     Square root                     ║
+╠══════════════════════════════════════════════════════════════╣
+║ WORKFLOW TIPS                                                ║
+║ • Use [[links]] liberally to connect ideas                   ║
+║ • Create MOCs (Maps of Content) to organize                  ║
+║ • Use tags for categories, links for relationships           ║
+║ • Embed notes ![[note]] to create dashboards                 ║
+║ • Use templates for consistent note structure                ║
+║ • Regular use of graph view to discover connections          ║
+║ • Daily notes for journaling and task tracking               ║
+║ • Use backlinks panel to see what links to current note      ║
+╠══════════════════════════════════════════════════════════════╣
+║ ORGANIZATION PATTERNS                                        ║
+║                                                              ║
+║ ZETTELKASTEN:                                                ║
+║ • Atomic notes (one idea per note)                           ║
+║ • Link notes together                                        ║
+║ • Use unique IDs (timestamps)                                ║
+║                                                              ║
+║ PARA METHOD:                                                 ║
+║ • Projects (active with deadline)                            ║
+║ • Areas (ongoing responsibilities)                           ║
+║ • Resources (reference material)                             ║
+║ • Archives (inactive)                                        ║
+║                                                              ║
+║ FOLDER STRUCTURE:                                            ║
+║ 00 Inbox/           Unsorted notes                           ║
+║ 10 Projects/        Active projects                          ║
+║ 20 Areas/           Ongoing areas                            ║
+║ 30 Resources/       Reference material                       ║
+║ 40 Archives/        Completed/inactive                       ║
+║ Templates/          Note templates                           ║
+║ Attachments/        Images, files                            ║
+╠══════════════════════════════════════════════════════════════╣
+║ TEMPLATE EXAMPLE                                             ║
+║ ---                                                          ║
+║ title: {{title}}                                             ║
+║ created: {{date}}                                            ║
+║ tags: []                                                     ║
+║ ---                                                          ║
+║                                                              ║
+║ # {{title}}                                                  ║
+║                                                              ║
+║ ## Overview                                                  ║
+║                                                              ║
+║ ## Notes                                                     ║
+║                                                              ║
+║ ## Related                                                   ║
+║ - [[]]                                                       ║
+║                                                              ║
+║ ## References                                                ║
+╠══════════════════════════════════════════════════════════════╣
+║ ADVANCED MARKDOWN                                            ║
+║ Escaping: \*not italic\*     Escape special characters       ║
+║                                                              ║
+║ Definition lists:                                            ║
+║ Term                                                         ║
+║ : Definition                                                 ║
+║                                                              ║
+║ Abbreviations:                                               ║
+║ *[HTML]: Hyper Text Markup Language                          ║
+║                                                              ║
+║ Subscript: H~2~O             (some parsers)                  ║
+║ Superscript: X^2^            (some parsers)                  ║
+╠══════════════════════════════════════════════════════════════╣
+║ USEFUL OBSIDIAN COMMANDS                                     ║
+║ Quick Switcher              Ctrl/Cmd + O                     ║
+║ Command Palette             Ctrl/Cmd + P                     ║
+║ Search                      Ctrl/Cmd + Shift + F             ║
+║ Open Graph View             Ctrl/Cmd + G                     ║
+║ Toggle Sidebar              Ctrl/Cmd + Alt + ←/→             ║
+║ Create Note                 Ctrl/Cmd + N                     ║
+║ Open Random Note            (set custom hotkey)              ║
+║ Insert Template             (set custom hotkey)              ║
+║ Toggle Fold                 (set custom hotkey)              ║
+╠══════════════════════════════════════════════════════════════╣
+║ MARKDOWN BEST PRACTICES                                      ║
+║ • Use ATX-style headers (# ## ###) not underline style       ║
+║ • Leave blank line before/after headers                      ║
+║ • Use reference-style links for repeated URLs                ║
+║ • Indent nested lists with 2 or 4 spaces (be consistent)     ║
+║ • Use fenced code blocks (```) not indented                  ║
+║ • Always specify language in code blocks                     ║
+║ • Use | for tables, not HTML                                 ║
+║ • Escape special characters when needed: \* \_ \` \#         ║
+╚══════════════════════════════════════════════════════════════╝

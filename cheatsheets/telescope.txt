@@ -1,0 +1,32 @@
+TELESCOPE CHEAT SHEET:
+
+Files:
+  Space ff  → Find files
+  Space fg  → Search in files
+  Space fr  → Recent files
+  Space fb  → File browser
+
+Code:
+  Space lr  → Find references
+  Space ls  → Document symbols
+  Space lw  → Diagnostics
+
+Git:
+  Space gs  → Git status
+  Space gc  → Git commits
+
+Buffers/History:
+  Space bu  → Buffers
+  Space fm  → Marks
+  Space fj  → Jump list
+
+Vim:
+  Space fh  → Help
+  Space fk  → Keymaps
+
+Inside Telescope:
+  Ctrl-j/k  → Navigate
+  Tab       → Multi-select
+  Ctrl-q    → Send to quickfix
+  Ctrl-u/d  → Scroll preview
+  Esc       → Close

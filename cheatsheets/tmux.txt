@@ -1,0 +1,50 @@
+TMUX CHEATSHEET (with your custom config)
+
+PREFIX KEY: Ctrl+a (press before most commands)
+
+SESSIONS
+tmux                New session
+tmux new -s name    New named session
+Ctrl+a d            Detach from session
+tmux ls             List sessions
+tmux attach         Attach to last session
+tmux attach -t name Attach to named session
+tmux kill-session   Kill current session
+tmux kill-server    Kill all sessions
+
+PANES (SPLITS)
+Ctrl+a |            Split vertical
+Ctrl+a -            Split horizontal
+Alt+arrows          Move between panes (no prefix!)
+Ctrl+a arrow        Move between panes (with prefix)
+Ctrl+a x            Kill current pane
+Ctrl+a z            Zoom/unzoom pane (fullscreen toggle)
+Ctrl+a Space        Cycle through pane layouts
+Ctrl+a {            Move pane left
+Ctrl+a }            Move pane right
+
+WINDOWS (TABS)
+Ctrl+a c            Create new window
+Ctrl+a n            Next window
+Ctrl+a p            Previous window
+Ctrl+a 0-9          Switch to window number
+Ctrl+a ,            Rename window
+Ctrl+a &            Kill window
+Ctrl+a w            List windows
+
+COPY MODE (scrolling/copying)
+Ctrl+a [            Enter copy mode
+q                   Exit copy mode
+Space               Start selection
+Enter               Copy selection
+Ctrl+a ]            Paste
+
+MISC
+Ctrl+a :            Command prompt
+Ctrl+a ?            List all keybindings
+Ctrl+a t            Show time
+mouse               Click to select panes/windows (enabled)
+
+USEFUL COMMANDS (at Ctrl+a : prompt)
+:source ~/.tmux.conf    Reload config
+:setw synchronize-panes Toggle sync input to all panes

@@ -1,0 +1,48 @@
+# List files in current directory with permissions
+ls -l
+
+# Include hidden files (dotfiles)
+ls -la
+
+# List specific directory
+ls -la ~/.config/
+
+# Recursive (show all subdirectories)
+ls -laR ~/.config/
+```
+# Human-readable file sizes
+ls -lah
+
+# Sort by modification time (newest first)
+ls -lat
+
+# Sort by size
+ls -laS
+
+# Only show directories
+ls -lad */
+
+# Just check ownership of your config files
+ls -la ~/.config/kitty/kitty.conf
+ls -la ~/.config/nvim/
+ls -la ~/.neomuttrc
+**What you're seeing:**
+```
+-rw-r--r--  1 username groupname  1234 Dec 08 10:30 file.txt
+│││││││││      │        │          │    │            │
+│││││││││      │        │          │    │            └─ filename
+│││││││││      │        │          │    └─ date modified
+│││││││││      │        │          └─ size in bytes
+│││││││││      │        └─ group owner
+│││││││││      └─ user owner
+││││││││└─ others: read
+│││││││└─ others: write (-)
+││││││└─ others: execute (-)
+│││││└─ group: read
+││││└─ group: write (-)
+│││└─ group: execute (-)
+││└─ user: read
+│└─ user: write
+└─ user: execute (-)
+
+First character: - = file, d = directory, l = symlink

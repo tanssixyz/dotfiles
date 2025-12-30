@@ -1,0 +1,84 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                    KITTY TERMINAL CHEATSHEET                     ║
+╔══════════════════════════════════════════════════════════════════╗
+
+┌─ TAB MANAGEMENT ────────────────────────────────────────────────┐
+│ Ctrl+Shift+T         New tab                                     │
+│ Ctrl+Shift+Q         Close current tab                           │
+│ Ctrl+Shift+.         Next tab                                    │
+│ Ctrl+Shift+,         Previous tab                                │
+│ Ctrl+Shift+1-4       Jump to tab 1-4                             │
+└──────────────────────────────────────────────────────────────────┘
+
+┌─ WINDOW/SPLIT MANAGEMENT ───────────────────────────────────────┐
+│ Ctrl+alt+V         Vertical split (new window right)           │
+│ Ctrl+alt+S         Horizontal split (new window below)         │
+│ Ctrl+Shift+W         Close current window                        │
+│ Ctrl+Shift+Z         Toggle stack layout (maximize/restore)      │
+│ Ctrl+Shift+R         Resize windows (arrows to adjust)           │
+│ Ctrl+Shift+]         Next window                                 │
+│ Ctrl+Shift+[         Previous window                             │
+└──────────────────────────────────────────────────────────────────┘
+
+┌─ NAVIGATION (VIM-STYLE) ────────────────────────────────────────┐
+│ Ctrl+H               Move to left window                         │
+│ Ctrl+J               Move to bottom window                       │
+│ Ctrl+K               Move to top window                          │
+│ Ctrl+L               Move to right window                        │
+│                                                                   │
+│ Ctrl+Shift+H         Move current window left                    │
+│ Ctrl+Shift+J         Move current window down                    │
+│ Ctrl+Shift+K         Move current window up                      │
+│ Ctrl+Shift+L         Move current window right                   │
+└──────────────────────────────────────────────────────────────────┘
+
+┌─ HINTS & SELECTION (KEYBOARD MODE) ─────────────────────────────┐
+│ Ctrl+Shift+P > U     Select URLs with keyboard                   │
+│ Ctrl+Shift+P > H     Select file paths with keyboard             │
+│ Ctrl+Shift+P > L     Select lines with keyboard                  │
+│ Ctrl+Shift+P > W     Select words with keyboard                  │
+│                      (Then type letters to narrow, Enter to copy)│
+└──────────────────────────────────────────────────────────────────┘
+
+┌─ SCROLLBACK & SEARCH ───────────────────────────────────────────┐
+│ Ctrl+Shift+F         Open scrollback in pager (less)             │
+│ Ctrl+Shift+H         Show command history in pager               │
+│ Shift+PgUp/PgDn      Scroll up/down                              │
+│ Ctrl+Shift+U         Unicode input                               │
+└──────────────────────────────────────────────────────────────────┘
+
+┌─ FONT SIZE ─────────────────────────────────────────────────────┐
+│ Ctrl+Shift+=         Increase font size                          │
+│ Ctrl+Shift+-         Decrease font size                          │
+│ Ctrl+Shift+0         Reset font size to default                  │
+└──────────────────────────────────────────────────────────────────┘
+
+┌─ COPY/PASTE ────────────────────────────────────────────────────┐
+│ Ctrl+Shift+C         Copy to clipboard                           │
+│ Ctrl+Shift+V         Paste from clipboard                        │
+│ (Selection)          Auto-copy on select (enabled)               │
+└──────────────────────────────────────────────────────────────────┘
+
+┌─ CONFIG & DEBUG ────────────────────────────────────────────────┐
+│ Ctrl+Shift+F5        Reload config file                          │
+│ Ctrl+Shift+F6        Debug config (shows current settings)       │
+│ Ctrl+Shift+Escape    Open kitty shell (remote control)           │
+└──────────────────────────────────────────────────────────────────┘
+
+┌─ USEFUL COMMANDS (FROM SHELL) ──────────────────────────────────┐
+│ kitty +kitten icat file.png     Display image in terminal        │
+│ kitty +kitten diff file1 file2  Side-by-side diff viewer         │
+│ kitty @ ls                      List all windows/tabs            │
+│ kitty --session file.conf       Start with session layout        │
+└──────────────────────────────────────────────────────────────────┘
+
+┌─ WORKFLOW TIPS ─────────────────────────────────────────────────┐
+│ • Use Ctrl+Shift+Z to "maximize" current window (stack layout)   │
+│ • Tabs = different projects/contexts                             │
+│ • Splits = related tasks within same context                     │
+│ • Hint mode (Ctrl+Shift+P) = no more mouse for URLs/paths        │
+│ • Images display natively - try: neofetch, ranger previews       │
+└──────────────────────────────────────────────────────────────────┘
+
+Pro tip: Keep this file as ~/.config/kitty/CHEATSHEET.txt
+         View anytime with: cat ~/.config/kitty/CHEATSHEET.txt

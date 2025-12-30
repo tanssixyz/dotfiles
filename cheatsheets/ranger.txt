@@ -1,0 +1,54 @@
+RANGER CHEATSHEET
+
+NAVIGATION
+j/k         Down/up
+h/l         Parent dir/open file or dir
+gg          Go to top
+G           Go to bottom
+Ctrl+d      Page down
+Ctrl+u      Page up
+/           Search
+n/N         Next/previous search result
+
+FILE OPERATIONS
+yy          Yank (copy) file
+dd          Cut file
+pp          Paste
+dD          Delete (asks confirmation)
+cw          Rename file
+I           Rename from beginning
+A           Rename from end (before extension)
+Space       Select/deselect file
+v           Select all
+
+TABS & MARKS
+gn          New tab
+gt/gT       Next/previous tab
+gc          Close tab
+m<key>      Set bookmark (e.g., ma)
+'<key>      Go to bookmark (e.g., 'a)
+
+VIEW & DISPLAY
+zh          Show hidden files
+zi          Preview toggle
+zp          Preview type toggle
+S           Open shell in current dir
+!           Execute shell command
+
+QUICK SHORTCUTS
+gh          Go to home
+g/          Go to root
+gm          Go to /mnt
+gM          Go to /media
+ge          Go to /etc
+gu          Go to /usr
+
+HELP & EXIT
+?           Help/show all keybindings
+q           Quit
+Pro tips:
+
+: opens command mode (like vim)
+1l opens file with default app, 2l with second choice, etc.
+o changes sort order
+Preview works great for images, text files, and PDFs!

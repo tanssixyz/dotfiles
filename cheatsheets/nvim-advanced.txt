@@ -1,0 +1,143 @@
+╔══════════════════════════════════════════════════════════════╗
+║              NEOVIM ADVANCED QUICK REFERENCE                 ║
+╠══════════════════════════════════════════════════════════════╣
+║ ADVANCED MOTIONS                                             ║
+║ f{char}     Jump to next char        F{char}  Jump backward  ║
+║ t{char}     Till next char           T{char}  Till backward  ║
+║ ;           Repeat f/t/F/T           ,        Reverse f/t    ║
+║ %           Jump to matching bracket                         ║
+║ *           Search word under cursor (forward)               ║
+║ #           Search word under cursor (backward)              ║
+║ gd          Go to definition         gD       Go to global   ║
+║ gf          Go to file under cursor                          ║
+║ C-o         Jump back                C-i      Jump forward   ║
+║ ``          Jump to last position                            ║
+║ '.          Jump to last change                              ║
+╠══════════════════════════════════════════════════════════════╣
+║ TEXT OBJECTS (combine with d/c/y/v)                          ║
+║ iw          Inner word               aw       Around word    ║
+║ iW          Inner WORD               aW       Around WORD    ║
+║ is          Inner sentence           as       Around sent.   ║
+║ ip          Inner paragraph          ap       Around para.   ║
+║ i"          Inner quotes             a"       Around quotes  ║
+║ i'          Inner single quotes      a'       Around '       ║
+║ i(  i)      Inner parentheses        a(  a)   Around ()      ║
+║ i[  i]      Inner brackets           a[  a]   Around []      ║
+║ i{  i}      Inner braces             a{  a}   Around {}      ║
+║ it          Inner tag (HTML)         at       Around tag     ║
+║                                                              ║
+║ Examples:                                                    ║
+║ ci"         Change inside quotes                            ║
+║ da(         Delete around parentheses                        ║
+║ yi{         Yank inside braces                               ║
+║ vip         Select paragraph                                 ║
+╠══════════════════════════════════════════════════════════════╣
+║ MULTI-LINE EDITING                                           ║
+║ C-v         Visual block mode                                ║
+║ C-v + I     Insert at start of block                         ║
+║ C-v + A     Append at end of block                           ║
+║ C-v + c     Change block                                     ║
+║ gv          Reselect last selection                          ║
+║                                                              ║
+║ Example: Comment multiple lines                              ║
+║ 1. C-v to select column                                      ║
+║ 2. Select lines with j/k                                     ║
+║ 3. I to insert                                               ║
+║ 4. Type //                                                   ║
+║ 5. Esc (appears on all lines)                                ║
+╠══════════════════════════════════════════════════════════════╣
+║ MARKS & JUMPS                                                ║
+║ m{a-z}      Set local mark           m{A-Z}   Set global    ║
+║ '{mark}     Jump to mark line        `{mark}  Jump to exact ║
+║ :marks      List all marks                                   ║
+║ :delmarks a Delete mark a            :delm!   Delete all     ║
+║                                                              ║
+║ Special marks:                                               ║
+║ ''          Position before jump     '.       Last change    ║
+║ '"          Last exit position       '^       Last insert    ║
+╠══════════════════════════════════════════════════════════════╣
+║ MACROS                                                       ║
+║ q{reg}      Start recording macro    q        Stop recording ║
+║ @{reg}      Execute macro            @@       Repeat last    ║
+║ :{n}@{reg}  Execute macro n times                            ║
+║                                                              ║
+║ Example: Add semicolon to 10 lines                           ║
+║ 1. qa (start recording to register a)                        ║
+║ 2. A;<Esc> (append semicolon)                                ║
+║ 3. j (move down)                                             ║
+║ 4. q (stop)                                                  ║
+║ 5. 9@a (repeat 9 more times)                                 ║
+╠══════════════════════════════════════════════════════════════╣
+║ REGISTERS                                                    ║
+║ "ayy        Yank to register a       "ap      Paste from a  ║
+║ "Ayy        Append to register a                             ║
+║ :reg        Show all registers       :reg a   Show reg a    ║
+║                                                              ║
+║ Special registers:                                           ║
+║ "0          Last yank                "+       System clip.   ║
+║ ""          Default register         "%       Current file   ║
+║ "/          Last search              ":       Last command   ║
+╠══════════════════════════════════════════════════════════════╣
+║ SEARCH & REPLACE                                             ║
+║ /{pattern}       Search forward      ?{pattern}  Backward    ║
+║ n                Next match           N          Previous     ║
+║ :%s/old/new/g    Replace in file     :%s/old/new/gc Confirm ║
+║ :s/old/new/g     Replace in line                             ║
+║ :'<,'>s/old/new/g Replace in visual selection                ║
+║ :%s/\<word\>/new/g Replace whole word only                   ║
+║                                                              ║
+║ Flags: g=global i=ignore-case c=confirm                      ║
+╠══════════════════════════════════════════════════════════════╣
+║ FOLDING                                                      ║
+║ zf{motion}  Create fold              zd       Delete fold    ║
+║ zo          Open fold                zc       Close fold     ║
+║ zR          Open all folds           zM       Close all      ║
+║ za          Toggle fold              zj       Next fold      ║
+║ zk          Previous fold            [z       Fold start     ║
+║ ]z          Fold end                                         ║
+╠══════════════════════════════════════════════════════════════╣
+║ WINDOWS & BUFFERS                                            ║
+║ :sp file    Horizontal split         :vsp file  Vertical     ║
+║ C-w s       Split window              C-w v     Split vert.  ║
+║ C-w w       Next window               C-w p     Previous     ║
+║ C-w hjkl    Navigate windows                                 ║
+║ C-w HJKL    Move window                                      ║
+║ C-w =       Equal size                C-w _     Max height   ║
+║ C-w |       Max width                 C-w o     Only this    ║
+║ C-w r       Rotate windows            C-w x     Exchange     ║
+║                                                              ║
+║ :bn         Next buffer               :bp       Previous     ║
+║ :bd         Delete buffer             :ls       List buffers ║
+║ :b {n}      Go to buffer n            :b name   By name      ║
+╠══════════════════════════════════════════════════════════════╣
+║ ADVANCED EDITING                                             ║
+║ C-a         Increment number          C-x       Decrement    ║
+║ g C-a       Sequential increment (visual)                    ║
+║ .           Repeat last change        &         Repeat :s    ║
+║ J           Join lines                gJ        Join no space║
+║ gq{motion}  Format text               gw        Format keep  ║
+║ =           Auto-indent               ==        Indent line  ║
+║ >           Indent                    <         Unindent     ║
+║ ~           Toggle case               gu        Lowercase    ║
+║ gU          Uppercase                 g~        Toggle case  ║
+╠══════════════════════════════════════════════════════════════╣
+║ LSP (Language Server)                                        ║
+║ gd          Go to definition          gD        Declaration  ║
+║ gr          References                K         Hover doc    ║
+║ <leader>rn  Rename symbol             <leader>ca Code action║
+║ [d          Previous diagnostic       ]d        Next diag.   ║
+║ <leader>e   Show diagnostic           <leader>q Diag. list  ║
+╠══════════════════════════════════════════════════════════════╣
+║ AUTOCOMPLETE                                                 ║
+║ C-n         Next suggestion           C-p       Previous     ║
+║ C-y         Confirm                   C-e       Close menu   ║
+║ C-space     Trigger completion                               ║
+╠══════════════════════════════════════════════════════════════╣
+║ QUICK TIPS                                                   ║
+║ • Use . (dot) to repeat - learn motions that work with it    ║
+║ • Combine operators + text objects: d2w, c3j, y4k            ║
+║ • Use counts: 3dd (delete 3 lines), 5j (down 5 lines)        ║
+║ • Visual block (C-v) for columnar editing                    ║
+║ • Macros for repetitive tasks                                ║
+║ • Use marks for quick navigation in large files              ║
+╚══════════════════════════════════════════════════════════════╝

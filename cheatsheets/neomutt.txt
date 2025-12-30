@@ -1,0 +1,138 @@
+**Cheatsheet of less obvious commands:**
+```
+COMPOSING:
+m       - New message
+r       - Reply
+g       - Group reply (reply-all)
+f       - Forward
+y       - Send message (after composing)
+e       - Edit message again (before sending)
+
+NAVIGATION:
+j/k     - Down/up (vim-style)
+/       - Search
+n       - Next search result
+c       - Change folder
+?       - Show help
+
+MANAGING:
+d       - Mark for deletion
+u       - Unmark (undelete)
+$       - Sync/purge (actually delete marked messages)
+s       - Save message to folder
+t       - Tag message (for bulk operations)
+T       - Tag pattern
+;d      - Delete all tagged messages
+ctrl+b  - Refresh mailbox
+$       - Refresh mailbox
+
+READING:
+Enter   - Open message
+i       - Back to index
+v       - View attachments
+|       - Pipe message to command
+
+OTHER:
+q       - Quit
+x       - Quit without saving changes
+!       - Go to first folder (INBOX)
+bind pager !              shell-escape              # invoke a command in a subshell
+bind pager #              break-thread              # break the thread in two
+bind pager $              sync-mailbox              # save changes to mailbox
+bind pager %              toggle-write              # toggle whether the mailbox will be rewritten
+bind pager &              link-threads              # link tagged message to the current one
+bind pager -              previous-page             # move to the previous page
+bind pager .              mailbox-list              # list mailboxes with new mail
+bind pager /              search                    # search for a regular expression
+bind pager 1              jump                      # jump to an index number
+bind pager 2              jump                      # jump to an index number
+bind pager 3              jump                      # jump to an index number
+bind pager 4              jump                      # jump to an index number
+bind pager 5              jump                      # jump to an index number
+bind pager 6              jump                      # jump to an index number
+bind pager 7              jump                      # jump to an index number
+bind pager 8              jump                      # jump to an index number
+bind pager 9              jump                      # jump to an index number
+bind pager :              enter-command             # enter a neomuttrc command
+bind pager <BackSpace>    previous-page             # move to the previous page
+bind pager <Down>         next-undeleted            # move to the next undeleted message
+bind pager <End>          bottom                    # jump to the bottom of the message
+bind pager <Enter>        sidebar-next              # move the highlight to next mailbox
+bind pager <Esc>/         search-reverse            # search backwards for a regular expression
+bind pager <Esc>C         decode-copy               # make decoded (text/plain) copy
+bind pager <Esc>P         check-traditional-pgp     # check for classic PGP
+bind pager <Esc>c         change-folder-readonly    # open a different folder in read only mode
+bind pager <Esc>d         delete-subthread          # delete all messages in subthread
+bind pager <Esc>e         resend-message            # use the current message as a template for a new one
+bind pager <Esc>k         mail-key                  # mail a PGP public key
+bind pager <Esc>n         next-subthread            # jump to the next subthread
+bind pager <Esc>r         read-subthread            # mark the current subthread as read
+bind pager <Esc>s         decode-save               # make decoded copy (text/plain) and delete
+bind pager <Esc>u         undelete-subthread        # undelete all messages in subthread
+bind pager <Home>         top                       # jump to the top of the message
+bind pager <KeypadEnter>  next-line                 # scroll down one line
+bind pager <Left>         previous-undeleted        # move to the previous undeleted message
+bind pager <PageDown>     next-page                 # move to the next page
+bind pager <PageUp>       previous-page             # move to the previous page
+bind pager <Return>       next-line                 # scroll down one line
+bind pager <Right>        next-undeleted            # move to the next undeleted message
+bind pager <Space>        next-page                 # move to the next page
+bind pager <Tab>          next-new-then-unread      # jump to the next new or unread message
+bind pager <Up>           previous-undeleted        # move to the previous undeleted message
+bind pager ?              help                      # this screen
+bind pager @              display-address           # display full address of sender
+bind pager C              copy-message              # copy a message to a file/mailbox
+bind pager F              flag-message              # toggle a message's 'important' flag
+bind pager G              bottom                    # jump to the bottom of the message
+bind pager H              skip-headers              # jump to first line after headers
+bind pager J              next-entry                # move to the next entry
+bind pager K              previous-entry            # move to the previous entry
+bind pager L              list-reply                # reply to specified mailing list
+bind pager N              mark-as-new               # toggle a message's 'new' flag
+bind pager O              sort-reverse              # sort messages in reverse order
+bind pager P              parent-message            # jump to parent message in thread
+bind pager Q              quit                      # save changes to mailbox and quit
+bind pager R              recall-message            # recall a postponed message
+bind pager S              skip-quoted               # skip beyond quoted text
+bind pager T              toggle-quoted             # toggle display of quoted text
+bind pager V              show-version              # show the NeoMutt version number and date
+bind pager W              clear-flag                # clear a status flag from a message
+bind pager Y              edit-label                # add, change, or delete a message's label
+bind pager \              search-toggle             # toggle search pattern coloring
+bind pager ^              top                       # jump to the top of the message
+bind pager ^D             delete-thread             # delete all messages in thread
+bind pager ^E             edit-type                 # edit attachment content type
+bind pager ^F             forget-passphrase         # wipe passphrases from memory
+bind pager ^K             sidebar-prev              # move the highlight to previous mailbox
+bind pager ^L             redraw-screen             # clear and redraw the screen
+bind pager ^N             next-thread               # jump to the next thread
+bind pager ^O             sidebar-open              # open highlighted mailbox
+bind pager ^P             previous-thread           # jump to previous thread
+bind pager ^R             read-thread               # mark the current thread as read
+bind pager ^U             undelete-thread           # undelete all messages in thread
+bind pager a              create-alias              # create an alias from a message sender
+bind pager b              bounce-message            # remail a message to another user
+bind pager c              change-folder             # open a different folder
+bind pager d              delete-message            # delete the current entry
+bind pager e              edit-or-view-raw-message  # edit the raw message if the mailbox is not read-only, otherwise view it
+bind pager f              forward-message           # forward a message with comments
+bind pager gg             top                       # jump to the top of the message
+bind pager h              exit                      # exit this menu
+bind pager i              exit                      # exit this menu
+bind pager j              next-line                 # scroll down one line
+bind pager k              previous-line             # scroll up one line
+bind pager l              view-attachments          # show MIME attachments
+bind pager m              mail                      # compose a new mail message
+bind pager n              search-next               # search for next match
+bind pager o              sort-mailbox              # sort messages
+bind pager p              print-message             # print the current entry
+bind pager q              exit                      # exit this menu
+bind pager r              reply                     # reply to a message
+bind pager s              save-message              # save message/attachment to a mailbox/file
+bind pager t              tag-message               # tag the current entry
+bind pager u              undelete-message          # undelete the current entry
+bind pager v              view-attachments          # show MIME attachments
+bind pager w              set-flag                  # set a status flag on a message
+bind pager x              exit                      # exit this menu
+bind pager |              pipe-entry                # pipe message/attachment to a shell command
+

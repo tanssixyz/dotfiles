@@ -1,0 +1,297 @@
+╔══════════════════════════════════════════════════════════════╗
+║                   BASH QUICK REFERENCE                       ║
+║              (Commands You Always Look Up)                   ║
+╠══════════════════════════════════════════════════════════════╣
+║ FILE OPERATIONS                                              ║
+║ ls -lah         List all + hidden + human readable           ║
+║ ls -ltr         List by time (oldest first)                  ║
+║ cp -r src dst   Copy directory recursively                   ║
+║ cp -a src dst   Copy preserving attributes                   ║
+║ mv old new      Move/rename                                  ║
+║ rm -rf dir      Remove directory recursively (DANGEROUS!)    ║
+║ mkdir -p a/b/c  Create nested directories                    ║
+║ touch file      Create empty file / update timestamp         ║
+║ ln -s target link  Create symbolic link                      ║
+║ file filename   Determine file type                          ║
+║ du -sh dir      Directory size human readable                ║
+║ df -h           Disk space human readable                    ║
+╠══════════════════════════════════════════════════════════════╣
+║ FILE PERMISSIONS                                             ║
+║ chmod 755 file  rwxr-xr-x (owner: all, others: read+exec)    ║
+║ chmod 644 file  rw-r--r-- (owner: rw, others: read)          ║
+║ chmod +x file   Add execute permission                       ║
+║ chmod -R 755 dir Recursive permissions                       ║
+║ chown user file Change owner                                 ║
+║ chown -R user:group dir  Change owner recursively            ║
+║                                                              ║
+║ Permission numbers:                                          ║
+║ 4=read 2=write 1=execute                                     ║
+║ 7=rwx 6=rw- 5=r-x 4=r-- 0=---                                ║
+║ First digit=owner, second=group, third=others                ║
+╠══════════════════════════════════════════════════════════════╣
+║ FIND FILES                                                   ║
+║ find . -name "*.txt"        Find by name                     ║
+║ find . -iname "*.txt"       Case insensitive                 ║
+║ find . -type f              Files only                       ║
+║ find . -type d              Directories only                 ║
+║ find . -mtime -7            Modified in last 7 days          ║
+║ find . -size +100M          Larger than 100MB                ║
+║ find . -name "*.log" -delete Delete found files              ║
+║ find . -name "*.c" -exec grep "main" {} \;  Exec on found    ║
+║ find . -name "*.txt" | xargs rm  Delete with xargs           ║
+╠══════════════════════════════════════════════════════════════╣
+║ GREP (SEARCH TEXT)                                           ║
+║ grep "pattern" file         Search in file                   ║
+║ grep -r "pattern" dir       Recursive search                 ║
+║ grep -i "pattern" file      Case insensitive                 ║
+║ grep -v "pattern" file      Invert match (exclude)           ║
+║ grep -n "pattern" file      Show line numbers                ║
+║ grep -l "pattern" *.txt     Show only filenames              ║
+║ grep -c "pattern" file      Count matches                    ║
+║ grep -A 3 "pattern" file    3 lines after match              ║
+║ grep -B 3 "pattern" file    3 lines before match             ║
+║ grep -C 3 "pattern" file    3 lines context                  ║
+║ grep -E "pat1|pat2" file    Extended regex (OR)              ║
+║ grep -w "word" file         Match whole word                 ║
+╠══════════════════════════════════════════════════════════════╣
+║ TEXT PROCESSING                                              ║
+║ cat file                Show file                            ║
+║ cat file1 file2         Concatenate files                    ║
+║ tac file                Reverse cat (last line first)        ║
+║ head -n 10 file         First 10 lines                       ║
+║ tail -n 10 file         Last 10 lines                        ║
+║ tail -f file            Follow file (live updates)           ║
+║ less file               Paginate file (q to quit)            ║
+║ wc -l file              Count lines                          ║
+║ wc -w file              Count words                          ║
+║ wc -c file              Count bytes                          ║
+║ sort file               Sort lines                           ║
+║ sort -r file            Reverse sort                         ║
+║ sort -n file            Numeric sort                         ║
+║ sort -u file            Sort and remove duplicates           ║
+║ uniq file               Remove adjacent duplicates           ║
+║ uniq -c file            Count occurrences                    ║
+║ cut -d: -f1 file        Cut field 1 (delimiter :)            ║
+║ cut -c1-10 file         Cut characters 1-10                  ║
+║ tr 'a-z' 'A-Z' < file   Translate (uppercase)                ║
+║ tr -d '\n' < file       Delete newlines                      ║
+╠══════════════════════════════════════════════════════════════╣
+║ SED (STREAM EDITOR)                                          ║
+║ sed 's/old/new/' file           Replace first occurrence     ║
+║ sed 's/old/new/g' file          Replace all                  ║
+║ sed 's/old/new/gi' file         Replace all (ignore case)    ║
+║ sed '5d' file                   Delete line 5                ║
+║ sed '1,3d' file                 Delete lines 1-3             ║
+║ sed -n '5,10p' file             Print lines 5-10             ║
+║ sed -i 's/old/new/g' file       Edit file in-place           ║
+║ sed -i.bak 's/old/new/g' file   Backup then edit             ║
+║ sed '/pattern/d' file           Delete lines matching        ║
+║ sed '/^$/d' file                Delete empty lines           ║
+╠══════════════════════════════════════════════════════════════╣
+║ AWK (TEXT PROCESSING)                                        ║
+║ awk '{print $1}' file           Print first column           ║
+║ awk '{print $NF}' file          Print last column            ║
+║ awk -F: '{print $1}' file       Custom delimiter (:)         ║
+║ awk 'NR==5' file                Print line 5                 ║
+║ awk 'NR>=5 && NR<=10' file      Print lines 5-10             ║
+║ awk '/pattern/' file            Print matching lines         ║
+║ awk '{sum+=$1} END {print sum}' Sum first column             ║
+║ awk 'length>80' file            Lines longer than 80         ║
+╠══════════════════════════════════════════════════════════════╣
+║ ARCHIVES & COMPRESSION                                       ║
+║ tar -czf archive.tar.gz dir     Create gzip tar              ║
+║ tar -xzf archive.tar.gz         Extract gzip tar             ║
+║ tar -cjf archive.tar.bz2 dir    Create bzip2 tar             ║
+║ tar -xjf archive.tar.bz2        Extract bzip2 tar            ║
+║ tar -tf archive.tar.gz          List contents                ║
+║ tar -xzf file.tar.gz -C /path   Extract to path              ║
+║ zip -r archive.zip dir          Create zip                   ║
+║ unzip archive.zip               Extract zip                  ║
+║ unzip -l archive.zip            List zip contents            ║
+║ gzip file                       Compress (creates file.gz)   ║
+║ gunzip file.gz                  Decompress                   ║
+║                                                              ║
+║ tar flags: c=create x=extract z=gzip j=bzip2 f=file v=verbose║
+╠══════════════════════════════════════════════════════════════╣
+║ PROCESS MANAGEMENT                                           ║
+║ ps aux              All processes                            ║
+║ ps aux | grep name  Find process by name                     ║
+║ top                 Live process viewer (q to quit)          ║
+║ htop                Better process viewer                    ║
+║ kill PID            Kill process                             ║
+║ kill -9 PID         Force kill                               ║
+║ killall name        Kill by name                             ║
+║ pkill pattern       Kill by pattern                          ║
+║ pgrep pattern       Find process by pattern                  ║
+║ jobs                List background jobs                     ║
+║ bg                  Resume job in background                 ║
+║ fg                  Bring job to foreground                  ║
+║ command &           Run in background                        ║
+║ nohup command &     Run immune to hangup                     ║
+║ ctrl-z              Suspend current job                      ║
+║ ctrl-c              Kill current job                         ║
+╠══════════════════════════════════════════════════════════════╣
+║ REDIRECTION & PIPES                                          ║
+║ cmd > file          Redirect output (overwrite)              ║
+║ cmd >> file         Redirect output (append)                 ║
+║ cmd 2> file         Redirect stderr                          ║
+║ cmd &> file         Redirect stdout + stderr                 ║
+║ cmd 2>&1            Redirect stderr to stdout                ║
+║ cmd < file          Input from file                          ║
+║ cmd1 | cmd2         Pipe output to input                     ║
+║ cmd | tee file      Write to file AND stdout                 ║
+║ cmd > /dev/null     Discard output                           ║
+║ cmd 2>&1 | tee log  Capture both stdout/stderr to file       ║
+╠══════════════════════════════════════════════════════════════╣
+║ NETWORKING                                                   ║
+║ curl https://url            Download/request                 ║
+║ curl -O https://url/file    Download file                    ║
+║ wget https://url/file       Download file                    ║
+║ ping host                   Test connection                  ║
+║ ssh user@host               SSH connection                   ║
+║ scp file user@host:/path    Copy file to remote              ║
+║ scp user@host:/file .       Copy file from remote            ║
+║ rsync -avz src/ dst/        Sync directories                 ║
+║ netstat -tulpn              Show listening ports             ║
+║ ss -tulpn                   Modern netstat                   ║
+║ ip a                        Show IP addresses                ║
+║ ip addr show                Show network interfaces          ║
+╠══════════════════════════════════════════════════════════════╣
+║ SYSTEM INFO                                                  ║
+║ uname -a            System information                       ║
+║ hostname            Show hostname                            ║
+║ uptime              System uptime                            ║
+║ who                 Who is logged in                         ║
+║ whoami              Current user                             ║
+║ date                Current date/time                        ║
+║ cal                 Calendar                                 ║
+║ free -h             Memory usage                             ║
+║ df -h               Disk usage                               ║
+║ du -sh *            Size of each item                        ║
+║ lsblk               List block devices                       ║
+║ lsusb               List USB devices                         ║
+║ lscpu               CPU information                          ║
+╠══════════════════════════════════════════════════════════════╣
+║ VARIABLES & EXPANSIONS                                       ║
+║ var="value"         Set variable                             ║
+║ echo $var           Use variable                             ║
+║ echo ${var}         Use variable (explicit)                  ║
+║ echo ${var:-default} Use default if empty                    ║
+║ echo ${var:=default} Set default if empty                    ║
+║ echo ${#var}        Length of variable                       ║
+║ echo ${var:0:5}     Substring (from 0, length 5)             ║
+║ echo ${var/old/new} Replace first occurrence                 ║
+║ echo ${var//old/new} Replace all occurrences                 ║
+║ export VAR=value    Environment variable                     ║
+║ $0                  Script name                              ║
+║ $1, $2, ...         Script arguments                         ║
+║ $@                  All arguments                            ║
+║ $#                  Number of arguments                      ║
+║ $?                  Exit status of last command              ║
+║ $$                  Current process ID                       ║
+╠══════════════════════════════════════════════════════════════╣
+║ CONDITIONALS                                                 ║
+║ if [ condition ]; then ... fi                                ║
+║ if [ condition ]; then ... else ... fi                       ║
+║ if [ condition ]; then ... elif [ ... ]; then ... fi         ║
+║                                                              ║
+║ File tests:                                                  ║
+║ [ -f file ]         File exists                              ║
+║ [ -d dir ]          Directory exists                         ║
+║ [ -e path ]         Path exists                              ║
+║ [ -r file ]         Readable                                 ║
+║ [ -w file ]         Writable                                 ║
+║ [ -x file ]         Executable                               ║
+║ [ -s file ]         Not empty                                ║
+║                                                              ║
+║ String tests:                                                ║
+║ [ -z "$str" ]       String is empty                          ║
+║ [ -n "$str" ]       String is not empty                      ║
+║ [ "$a" = "$b" ]     Strings equal                            ║
+║ [ "$a" != "$b" ]    Strings not equal                        ║
+║                                                              ║
+║ Numeric tests:                                               ║
+║ [ $a -eq $b ]       Equal                                    ║
+║ [ $a -ne $b ]       Not equal                                ║
+║ [ $a -gt $b ]       Greater than                             ║
+║ [ $a -lt $b ]       Less than                                ║
+║ [ $a -ge $b ]       Greater or equal                         ║
+║ [ $a -le $b ]       Less or equal                            ║
+║                                                              ║
+║ Logical:                                                     ║
+║ [ cond1 -a cond2 ]  AND                                      ║
+║ [ cond1 -o cond2 ]  OR                                       ║
+║ [ ! cond ]          NOT                                      ║
+╠══════════════════════════════════════════════════════════════╣
+║ LOOPS                                                        ║
+║ for i in 1 2 3; do echo $i; done                             ║
+║ for i in {1..10}; do echo $i; done                           ║
+║ for file in *.txt; do echo $file; done                       ║
+║ for ((i=0; i<10; i++)); do echo $i; done                     ║
+║                                                              ║
+║ while [ condition ]; do ... done                             ║
+║ while read line; do echo $line; done < file                  ║
+║                                                              ║
+║ until [ condition ]; do ... done                             ║
+╠══════════════════════════════════════════════════════════════╣
+║ USEFUL ONE-LINERS                                            ║
+║ # Find and replace in all files                              ║
+║ find . -name "*.txt" -exec sed -i 's/old/new/g' {} \;        ║
+║                                                              ║
+║ # Find large files (>100MB)                                  ║
+║ find . -type f -size +100M -exec ls -lh {} \;                ║
+║                                                              ║
+║ # Count files in directory                                   ║
+║ ls -1 | wc -l                                                ║
+║                                                              ║
+║ # Disk usage sorted                                          ║
+║ du -h --max-depth=1 | sort -hr                               ║
+║                                                              ║
+║ # Find duplicate files                                       ║
+║ find . -type f -exec md5sum {} \; | sort | uniq -w32 -dD    ║
+║                                                              ║
+║ # Delete files older than 30 days                            ║
+║ find . -type f -mtime +30 -delete                            ║
+║                                                              ║
+║ # Show directory tree                                        ║
+║ find . -type d | sed 's|[^/]*/| |g'                          ║
+║                                                              ║
+║ # Monitor file changes                                       ║
+║ watch -n 1 'ls -lh file'                                     ║
+║                                                              ║
+║ # Create backup with date                                    ║
+║ cp file{,.$(date +%Y%m%d).bak}                               ║
+║                                                              ║
+║ # Extract column from CSV                                    ║
+║ cut -d',' -f2 file.csv                                       ║
+║                                                              ║
+║ # Remove duplicate lines (preserve order)                    ║
+║ awk '!seen[$0]++' file                                       ║
+║                                                              ║
+║ # Print lines between patterns                               ║
+║ sed -n '/start/,/end/p' file                                 ║
+║                                                              ║
+║ # Replace spaces with underscores in filenames               ║
+║ for f in *\ *; do mv "$f" "${f// /_}"; done                 ║
+╠══════════════════════════════════════════════════════════════╣
+║ KEYBOARD SHORTCUTS                                           ║
+║ Ctrl-a          Beginning of line    Ctrl-e  End of line     ║
+║ Ctrl-u          Delete to start      Ctrl-k  Delete to end   ║
+║ Ctrl-w          Delete word back     Alt-d   Delete word fwd ║
+║ Ctrl-l          Clear screen         Ctrl-r  Reverse search  ║
+║ Ctrl-c          Kill command         Ctrl-z  Suspend         ║
+║ Ctrl-d          Exit/EOF             Tab     Autocomplete    ║
+║ !!              Last command         !$      Last argument   ║
+║ !^              First argument       !*      All arguments   ║
+║ Alt-b           Word back            Alt-f   Word forward    ║
+╠══════════════════════════════════════════════════════════════╣
+║ HISTORY                                                      ║
+║ history         Show command history                         ║
+║ !n              Run command n from history                   ║
+║ !!              Run last command                             ║
+║ !string         Run last command starting with string        ║
+║ !?string        Run last command containing string           ║
+║ ^old^new        Replace in last command                      ║
+║ Ctrl-r          Reverse search history                       ║
+║ history | grep pattern  Search history                       ║
+╚══════════════════════════════════════════════════════════════╝
