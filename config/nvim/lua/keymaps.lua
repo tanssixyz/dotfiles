@@ -109,3 +109,27 @@ keymap.set("n", "<leader>fk", ":Telescope keymaps<CR>", { desc = "Keymaps" })
 keymap.set("n", "<leader>fo", ":Telescope vim_options<CR>", { desc = "Vim options" })
 keymap.set("n", "<leader>ft", ":Telescope colorscheme<CR>", { desc = "Colorscheme" })
 keymap.set("n", "<leader>cmd", ":Telescope commands<CR>", { desc = "Commands" })
+
+-- Spell check keybindings
+keymap.set("n", "<leader>sp", ":setlocal spell!<CR>", { desc = "Toggle spell check" })
+keymap.set("n", "<s", "<s", { desc = "Next misspelled word" })
+keymap.set("n", ">s", ">s", { desc = "Previous misspelled word" })
+keymap.set("n", "z=", "z=", { desc = "Spelling suggestions" })
+keymap.set("n", "zg", "zg", { desc = "Add to dictionary" })
+keymap.set("n", "zw", "zw", { desc = "Mark as wrong" })
+
+-- Terminal keybindings
+-- Open terminal
+keymap.set("n", "<leader>tt", ":terminal<CR>", { desc = "Open terminal" })
+keymap.set("n", "<leader>tv", ":vsplit | terminal<CR>", { desc = "Terminal vertical split" })
+keymap.set("n", "<leader>th", ":split | terminal<CR>", { desc = "Terminal horizontal split" })
+
+-- Easy escape from terminal mode
+keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+keymap.set("t", "jk", "<C-\\><C-n>", { desc = "Exit terminal mode with jk" })
+
+-- Navigate between windows from terminal
+keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Move to left window" })
+keymap.set("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Move to bottom window" })
+keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Move to top window" })
+keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Move to right window" })

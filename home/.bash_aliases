@@ -35,6 +35,11 @@ alias install='sudo pacman -S'
 alias remove='sudo pacman -R'
 alias search='pacman -Ss'
 alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'  # Remove orphaned packages
+# USB shorcuts
+alias mnt-write='sudo mount -o rw,umask=0000 /dev/sdb1 /mnt/usb'
+alias mnt-read='sudo mount /dev/sdb1 /mnt/usb'
+alias umnt='sudo umount /mnt/usb'
+alias umnt-force='sudo umount -l /dev/usb'
 # Common Typos
 alias sl='ls'             # Typo fix
 alias gti='git'           # Typo fix
@@ -55,11 +60,7 @@ alias c='clear'
 alias x='exit'
 alias reload='source ~/.bashrc'
 alias editbash='nvim ~/.bashrc'
-alias b_a='nvim ~/.bash_aliases'
-alias chnv='nvim ~/cheatsheets/nvim.md'
-alias chnet='nvim ~/cheatsheets/network.md'
-alias chtm='nvim ~/cheatsheets/tmux.txt'
-alias chran='nvim ~/cheatsheets/ranger.txt'
+alias balias='nvim ~/.bash_aliases'
 alias tnew='tmux new -s'
 alias t='tmux'
 alias td='tmux detach'
@@ -116,21 +117,30 @@ alias ll='ls -lah'
 alias update='sudo pacman -Syu'
 alias start-dev='~/scripts/start-react-project.sh'
 alias musb='sudo mount /dev/sdb1 /mnt/usb'
+alias chat='cd ~/claude-chat && claude'
+alias ask='claude -p'
+# Obsidiam
+alias obs='nvim ~/obsidian/personal/index.md'
+alias finance='sc-im ~/finances-2026.sc'
 
 alias umusb='sudo umount /mnt/usb'
 alias cd-usb='cd /mnt/usb/'
 alias cd-ch='cd ~/cheatsheets/'
-# Projector aliases
-alias mirror='~/scripts/projector-mirror.sh'
-alias projector='~/scripts/projector-only.sh'
-alias laptop='~/scripts/laptop-only.sh'
 
+# Projector aliases
+# alias mirror='~/scripts/projector-mirror.sh'
+# alias projector='~/scripts/projector-only.sh'
+# alias laptop='~/scripts/laptop-only.sh'
+alias mirror='~/.local/bin/mirror-projector'
+alias laptop='~/.local/bin/only-laptop'
+alias projector='~/.local/bin/only-projector'
 # vpn custom alias
 alias vpn='vpn-connect'
 alias vpnoff='vpn-disconnect'
 alias vinfo='vpn-info'
 alias vswitch='vpn-switch'
 alias vpnspeed='vpn-speedtest'
+
 # Quick dotfiles management
 alias dotfiles='cd ~/dotfiles && git status'
 alias dotcommit='cd ~/dotfiles && git add -A && git commit -m'
@@ -149,52 +159,15 @@ alias nvimhelp='cat ~/cheatsheets/nvim-advanced.txt'
 alias yazihelp='cat ~/cheatsheets/yazi-quick.txt'
 alias telehelp='cat ~/cheatsheets/telescope-quick.txt'
 alias cheat='ls ~/cheatsheets/ && echo "Use: githelp, tmuxhelp, nvimhelp, yazihelp, telehelp"'
-
-# Quick cheatsheet printer
-qhelp() {
-    case $1 in
-        git) cat ~/cheatsheets/git-quick.txt ;;
-        tmux) cat ~/cheatsheets/tmux-quick.txt ;;
-        nvim) cat ~/cheatsheets/nvim-advanced.txt ;;
-        yazi) cat ~/cheatsheets/yazi-quick.txt ;;
-        tele*) cat ~/cheatsheets/telescope-quick.txt ;;
-        *) echo "Available: git, tmux, nvim, yazi, telescope" ;;
-    esac
-}
 alias bashhelp='cat ~/cheatsheets/bash-quick.txt'
+alias mdhelp='cat ~/cheatsheets/markdown-obsidian-quick.txt'
+alias mdref='nvim ~/cheatsheets/markdown-reference.md'
 
-# Updated qhelp with bash
-qhelp() {
-    case $1 in
-        git) cat ~/cheatsheets/git-quick.txt ;;
-        tmux) cat ~/cheatsheets/tmux-quick.txt ;;
-        nvim) cat ~/cheatsheets/nvim-advanced.txt ;;
-        yazi) cat ~/cheatsheets/yazi-quick.txt ;;
-        tele*) cat ~/cheatsheets/telescope-quick.txt ;;
-        bash) cat ~/cheatsheets/bash-quick.txt ;;
-        *) echo "Available: git, tmux, nvim, yazi, telescope, bash" ;;
-    esac
-}
-
-# Updated qhelp with bash
-qhelp() {
-    case $1 in
-        git) cat ~/cheatsheets/git-quick.txt ;;
-        tmux) cat ~/cheatsheets/tmux-quick.txt ;;
-        nvim) cat ~/cheatsheets/nvim-advanced.txt ;;
-        yazi) cat ~/cheatsheets/yazi-quick.txt ;;
-        tele*) cat ~/cheatsheets/telescope-quick.txt ;;
-        bash) cat ~/cheatsheets/bash-quick.txt ;;
-        *) echo "Available: git, tmux, nvim, yazi, telescope, bash" ;;
-    esac
-}
 
 # Search bash cheatsheet
 bashfind() {
     grep -i "$1" ~/cheatsheets/bash-quick.txt
 }
-alias mdhelp='cat ~/cheatsheets/markdown-obsidian-quick.txt'
-alias mdref='nvim ~/cheatsheets/markdown-reference.md'
 
 # Updated qhelp with markdown
 qhelp() {

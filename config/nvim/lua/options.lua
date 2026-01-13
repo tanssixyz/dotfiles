@@ -39,3 +39,16 @@ opt.splitbelow = true
 opt.swapfile = false
 opt.backup = false
 opt.undofile = true
+
+-- Spell check configuration
+vim.opt.spell = false -- Off by default
+vim.opt.spelllang = "en_gb"
+vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+
+-- Enable for specific file types
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text", "gitcommit" },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+})

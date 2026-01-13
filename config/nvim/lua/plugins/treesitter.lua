@@ -3,13 +3,13 @@ return {
   build = ":TSUpdate",
   config = function()
     require("nvim-treesitter.configs").setup({
-      ensure_installed = { 
-        "lua", 
-        "vim", 
-        "javascript", 
-        "typescript", 
-        "tsx",           -- React/JSX
-        "html", 
+      ensure_installed = {
+        "lua",
+        "vim",
+        "javascript",
+        "typescript",
+        "tsx",
+        "html",
         "css",
         "json",
         "markdown",
@@ -21,9 +21,7 @@ return {
       indent = {
         enable = true,
       },
-      autotag = {
-        enable = true,  -- Auto close tags
-      },
+      -- REMOVE autotag from here - it's now in its own plugin file
     })
   end,
 }

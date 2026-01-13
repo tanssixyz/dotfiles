@@ -1,6 +1,8 @@
 -- Set leader FIRST, before anything else
 vim.g.mapleader = " "      -- Space as leader
 vim.g.maplocalleader = " " -- Space as local leader too
+-- Suppress deprecation warnings during transition
+vim.deprecate = function() end
 
 require('options')
 
@@ -19,7 +21,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Load plugins
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+  checker = { enabled = false },
+  change_detection = { notify = false },
+})
 
 -- Load keymaps after plugins
 require('keymaps')

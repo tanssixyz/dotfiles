@@ -9,78 +9,38 @@ return {
     require("mason-lspconfig").setup({
       ensure_installed = {
         "lua_ls",
-        "ts_ls",       -- TypeScript/JavaScript
-        "tailwindcss", -- Tailwind CSS
-        "html",        -- HTML
-        "cssls",       -- CSS
-        "eslint",      -- ESLint
+        "ts_ls", -- Changed from tsserver (new name)
+        "tailwindcss",
+        "html",
+        "cssls",
+        "eslint",
       },
     })
 
-    local lspconfig = require("lspconfig")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    -- TypeScript/JavaScript
-    lspconfig.ts_ls.setup({
+    -- New way (no more lspconfig variable)
+    vim.lsp.config("*", {
       capabilities = capabilities,
-      settings = {
-        typescript = {
-          inlayHints = {
-            includeInlayParameterNameHints = "all",
-            includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-            includeInlayFunctionParameterTypeHints = true,
-            includeInlayVariableTypeHints = true,
-            includeInlayPropertyDeclarationTypeHints = true,
-            includeInlayFunctionLikeReturnTypeHints = true,
-            includeInlayEnumMemberValueHints = true,
-          },
-        },
-        javascript = {
-          inlayHints = {
-            includeInlayParameterNameHints = "all",
-            includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-            includeInlayFunctionParameterTypeHints = true,
-            includeInlayVariableTypeHints = true,
-            includeInlayPropertyDeclarationTypeHints = true,
-            includeInlayFunctionLikeReturnTypeHints = true,
-            includeInlayEnumMemberValueHints = true,
-          },
-        },
-      },
     })
+
+    -- TypeScript/JavaScript
+    vim.lsp.enable("ts_ls")
 
     -- Tailwind CSS
-    lspconfig.tailwindcss.setup({
-      capabilities = capabilities,
-      filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact" },
-    })
+    vim.lsp.enable("tailwindcss")
 
     -- HTML
-    lspconfig.html.setup({
-      capabilities = capabilities,
-    })
+    vim.lsp.enable("html")
 
     -- CSS
-    lspconfig.cssls.setup({
-      capabilities = capabilities,
-    })
+    vim.lsp.enable("cssls")
 
     -- ESLint
-    lspconfig.eslint.setup({
-      capabilities = capabilities,
-      on_attach = function(client, bufnr)
-        -- Auto-fix on save
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          buffer = bufnr,
-          command = "EslintFixAll",
-        })
-      end,
-    })
+    vim.lsp.enable("eslint")
 
     -- Lua
-    lspconfig.lua_ls.setup({
-      capabilities = capabilities,
-    })
+    vim.lsp.enable("lua_ls")
 
     -- Keybindings for LSP
     vim.api.nvim_create_autocmd("LspAttach", {
