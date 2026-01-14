@@ -128,9 +128,6 @@ alias cd-usb='cd /mnt/usb/'
 alias cd-ch='cd ~/cheatsheets/'
 
 # Projector aliases
-# alias mirror='~/scripts/projector-mirror.sh'
-# alias projector='~/scripts/projector-only.sh'
-# alias laptop='~/scripts/laptop-only.sh'
 alias mirror='~/.local/bin/mirror-projector'
 alias laptop='~/.local/bin/only-laptop'
 alias projector='~/.local/bin/only-projector'
@@ -169,16 +166,28 @@ bashfind() {
     grep -i "$1" ~/cheatsheets/bash-quick.txt
 }
 
+# Search tmux cheatsheet
+tmuxfind() {
+    grep -i "$1" ~/cheatsheets/tmux-quick.txt
+}
+# Search nvim cheatsheet
+nvimfind() {
+    grep -i "$1" ~/cheatsheets/nvim-advanced.txt
+}
 # Updated qhelp with markdown
 qhelp() {
     case $1 in
         git) cat ~/cheatsheets/git-quick.txt ;;
         tmux) cat ~/cheatsheets/tmux-quick.txt ;;
         nvim) cat ~/cheatsheets/nvim-advanced.txt ;;
+        dots) cat ~/cheatsheets/dotfiles-add-checklist.txt ;;
+        mutt) cat ~/cheatsheets/neomutt.txt ;;
+        scim) cat ~/cheatsheets/sc-im.txt ;;
+        w3m) cat ~/cheatsheets/w3m.txt ;;
         yazi) cat ~/cheatsheets/yazi-quick.txt ;;
         tele*) cat ~/cheatsheets/telescope-quick.txt ;;
         bash) cat ~/cheatsheets/bash-quick.txt ;;
         md|markdown|obsidian) cat ~/cheatsheets/markdown-obsidian-quick.txt ;;
-        *) echo "Available: git, tmux, nvim, yazi, telescope, bash, markdown" ;;
+        *) echo "Available: git, tmux, nvim, yazi, telescope, bash, markdown, sc-im, w3m, neomutt, dotfiles" ;;
     esac
 }
